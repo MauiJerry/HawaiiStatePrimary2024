@@ -1,0 +1,25 @@
+# Ignore PyCharm project files
+.idea/
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment directories
+venv/
+config.env/
+config.env
+
+# Ignore exe build files
+build/
+datalink/
+download/
+output/
+dist/
+*.exe
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore macOS specific files
+.DS_Store

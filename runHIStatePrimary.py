@@ -5,13 +5,17 @@ from candidates import Candidate, list_candidates
 from contests import Contest, list_contests
 from results import load_results, finalize_results
 from datalink import write_datalink
-from retrieveStateSummary import check_download_summary
+from retrieveStateSummary import check_download_summary, fake_data_file
 from makeDocx import generate_opendoc
 import shutil
 from datetime import datetime
+import win32print
+import win32api
 
-check_state_interval = 60 * 5
+check_state_interval = 60 * 1
 doDownload = False
+wait_for_real_data = True
+actually_print = False
 
 # Configure local logger
 logger = logging.getLogger(__name__)
@@ -37,11 +41,13 @@ results_file_path = os.path.join(data_folder, results_file_name)
 datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
 state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
 
+
 def print_file(file_path):
+    global actually_print
     # Get the default printer
     printer_name = win32print.GetDefaultPrinter()
     # Print the file
-    print(f"Printing {file_path} on {printer_name}" )
+    print(f"Printing {file_path} on {printer_name}")
     if actually_print:
         win32api.ShellExecute(
             0,
@@ -54,6 +60,7 @@ def print_file(file_path):
     else:
         print("but not really")
 
+
 def copy_summary_to_data(input_filepath):
     # Define the destination directory and filename
     destination_filename = 'summary.csv'
@@ -63,11 +70,12 @@ def copy_summary_to_data(input_filepath):
     shutil.copyfile(input_filepath, destination_filepath)
     logger.info(f"Copied {input_filepath} to {destination_filepath}")
 
+
 def runHIStatePrimary():
     # Load candidates and contests
     candidates = Candidate.from_csv(candidate_file_path)
     logger.debug(f"Candidates loaded: {candidates}")
-    list_candidates(candidates)
+    # list_candidates(candidates)
     contests = Contest.from_csv(contest_file_path)
     logger.debug(f"Contests loaded: {candidates}")
 
@@ -78,6 +86,10 @@ def runHIStatePrimary():
             path = check_download_summary(download_folder)
         else:
             path = state_summary_file_path
+        if path == fake_data_file and wait_for_real_data:
+            logger.info("State has not posted real data yet, continue Waiting\n")
+            continue
+
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         # If a new summary file is retrieved, process it
@@ -95,15 +107,15 @@ def runHIStatePrimary():
 
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             copy_data_link_name = os.path.join(output_folder, f'{datalink_file_name}_{timestamp}.csv')
-            shutil.copy(datalink_file_path,copy_data_link_name)
+            shutil.copy(datalink_file_path, copy_data_link_name)
 
             # export into a DocX (word document)
             docx_file_path = os.path.join(output_folder, f'{docx_base_name}_{timestamp}.docx')
             generate_opendoc(contests, candidates, docx_file_path)
-            # print_file(docx_file_path)
+            print_file(docx_file_path)
 
             logger.info("Processed and exported new data." + timestamp)
-            print("\n",timestamp, "Updated datalink at ", datalink_file_path)
+            print("\n", timestamp, "Updated datalink at ", datalink_file_path)
         else:
             logger.info("No update, back to sleep." + timestamp)
             print("No update, back to sleep.", timestamp)
@@ -114,14 +126,17 @@ def runHIStatePrimary():
         time.sleep(check_state_interval)  # Check for updates every 60 seconds
     print("Finished while Loop")
 
+
 def main():
     os.makedirs(data_folder, exist_ok=True)
     os.makedirs(download_folder, exist_ok=True)
     os.makedirs(datalink_folder, exist_ok=True)
+    os.makedirs(output_folder, exist_ok=True)
     print("Starting runHIStatePrimary - tool to retrieve primary results and forward them to tricaster")
     runHIStatePrimary()
 
+
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.WARN,
+    logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(name)s - %(module)s - %(funcName)s - %(levelname)s - %(message)s')
     main()

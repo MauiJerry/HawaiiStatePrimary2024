@@ -3,8 +3,7 @@ import logging
 
 # Configure logging
 logger = logging.getLogger(__name__)
-
-
+logger.setLevel(logging.INFO)
 #logger.setLevel(logging.DEBUG)
 
 def reformat_name(name):
@@ -82,7 +81,7 @@ def update_candidate_from_row(candidate, data):
     candidate.mail_votes = int(data["Mail Votes"])
     candidate.in_person_votes = int(data["In-Person Votes"])
     candidate.total_votes = int(data["Total Votes"])
-    print(
+    logging.debug(
         f"Updated candidate {candidate.index} {candidate.candidate_name} as {candidate.datalink_value} with {candidate.mail_votes}, {candidate.in_person_votes}, {candidate.total_votes} ")
 
 

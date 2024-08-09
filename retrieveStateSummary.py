@@ -6,29 +6,38 @@ from datetime import datetime
 import logging
 import chardet
 import shutil
+from dotenv import load_dotenv
 
 logger = logging.getLogger(__name__)
+#logger.setLevel(logging.DEBUG)
 
 # URL and file paths
-website_url = 'http://elections.hawaii.gov/files/media.txt'
-summary_url = 'https://go-elections.hawaii.gov/media-results/files/summary.txt'
+_website_url = 'http://elections.hawaii.gov/files/media.txt'
+_summary_url = None
 
 # User credentials
-username = 'akaku.maui.media'
-password = 'TheElectionOfHawaii!!'
+_username = None
+_password = None
 
+fake_data_file = "./data/fake_summary.txt"
 
 # Function to check for updates on the website
 def check_for_updates():
-    response = requests.head(summary_url, auth=HTTPBasicAuth(username, password))
+    global _summary_url, _username, _password
+
+    logger.debug(f"Checking {_summary_url}, u: {_username} p:{_password}")
+
+    response = requests.head(_summary_url, auth=HTTPBasicAuth(_username, _password))
     if response.status_code == 200:
         return response.headers['Last-Modified']
+    else:
+        logger.debug(f"Request response is:{response.status_code}")
     return None
-
 
 # Function to download the updated CSV file with a timestamp
 def download_summary(local_folder):
-    response = requests.get(summary_url, auth=HTTPBasicAuth(username, password))
+    global _summary_url, _username, _password
+    response = requests.get(_summary_url, auth=HTTPBasicAuth(_username, _password))
     if response.status_code == 200:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         timestamped_file_path = os.path.join(local_folder, f'summary_{timestamp}.txt')
@@ -51,13 +60,13 @@ def detect_encoding(file_path):
         return encoding, confidence
 
 
-def convert_to_utf8(input_file_path, temp_file_path):
+def convert_to_utf8(input_file_path, temp_file_path, encoding):
     """Convert a file to UTF-8 encoding."""
     try:
-        with open(input_file_path, 'r', encoding='utf-16') as f:
+        with open(input_file_path, 'r', encoding=encoding) as f:
             content = f.read()
 
-        with open(temp_file_path, 'w', encoding='utf-8') as f:
+        with open(temp_file_path, 'w', encoding='ascii') as f:
             f.write(content)
 
         logger.info(f"File {input_file_path} has been successfully converted to UTF-8 and saved as {temp_file_path}")
@@ -66,7 +75,23 @@ def convert_to_utf8(input_file_path, temp_file_path):
         raise
 
 
+def ensure_ascii(file_path):
+    """Ensure that a CSV file is UTF-8 encoded. If not, convert it."""
+    encoding, confidence = detect_encoding(file_path)
+    logger.debug(f"file {file_path} encoding is {encoding} confidence {confidence}")
+
+    if encoding.lower() == 'ascii':
+        logger.info(f"The file is UTF-8 encoded with confidence {confidence}.")
+        return file_path
+    else:
+        logger.info(f"Converting file from {encoding} to ascii.")
+        temp_file_path = file_path + '.ascii'
+        convert_to_ascii(file_path, temp_file_path, encoding)
+        return temp_file_path
+
 def strip_file(filepath):
+    global _state_file_is_hold
+    logger.debug(f"strip_file({filepath})")
     try:
         # Read the file and find the line starting with "#Contest ID"
         with open(filepath, 'r') as file:
@@ -76,7 +101,12 @@ def strip_file(filepath):
             if not lines[0].startswith("Format#1"):
                 raise ValueError(f"downloaded file {filepath} is NOT Format#1")
             else:
+                logger.debug(f"first line seems to be Format1: {lines[0]}")
                 print("web file is still Format#1")
+        else:
+            if lines[0].startswith("Information will be posted at a later date."):
+                logger.warning("Downloaded file is HOLD, State Has Not Posted real data")
+                return filepath, fake_data_file
 
         # Find the index of the line that starts with "#Contest ID"
         start_index = next((i for i, line in enumerate(lines) if line.startswith("#Contest ID")), None)
@@ -95,29 +125,27 @@ def strip_file(filepath):
         with open(new_filepath, 'w') as new_file:
             new_file.writelines(stripped_content)
 
+        _state_file_is_hold = False
         return filepath, new_filepath
 
     except Exception as e:
         return str(e), None
 
 
-def ensure_utf8(file_path):
-    """Ensure that a CSV file is UTF-8 encoded. If not, convert it."""
-    encoding, confidence = detect_encoding(file_path)
-
-    if encoding.lower() == 'utf-8':
-        logger.info(f"The file is UTF-8 encoded with confidence {confidence}.")
-        return file_path
-    else:
-        logger.info(f"Converting file from {encoding} to UTF-8.")
-        temp_file_path = file_path + '.utf8'
-        convert_to_utf8(file_path, temp_file_path)
-        return temp_file_path
-
-
 def check_download_summary(local_folder):
+    global _summary_url, _username, _password, _pauseUntilReal
+
     if not hasattr(check_download_summary, "last_modified_time"):
         check_download_summary.last_modified_time = 'None'  # Initialize the static variable
+        print("First Time - load username/password from env")
+        load_dotenv(dotenv_path='config.env')
+        _pauseUntilReal = os.getenv("PAUSE_UNTIL_REAL")
+        _summary_url = os.getenv("SUMMARY_URL")
+        _username = os.getenv("HI_USERNAME")
+        _password = os.getenv("HI_PASSWORD")
+        print(f"Loaded Username: {_username}, Password: {_password}, _pauseUntilReal{_pauseUntilReal}")
+        print(f"Summary URL {_summary_url}")
+
     current_modified_time = check_for_updates()
 
     retPath = None
@@ -127,19 +155,21 @@ def check_download_summary(local_folder):
         local_summary_path = download_summary(local_folder)
         if local_summary_path:
             print("Download is at ", local_summary_path)
-            utf8_file_path = ensure_utf8(local_summary_path)
+            utf8_file_path = ensure_ascii(local_summary_path)
             logger.debug("download in utf is at" + utf8_file_path)
 
             origPath, newPath = strip_file(utf8_file_path)
             retPath = origPath
             if newPath:
-                logger.info("updated (stripped 1st line) at" + newPath)
+                if newPath == fake_data_file:
+                    logger.warning("FAKE DATA loaded")
+                logger.debug("updated (stripped 1st line) at" + newPath)
                 retPath = newPath
             else:
                 logger.info("no need to strip lines use " + origPath)
             check_download_summary.last_modified_time = current_modified_time
     else:
-        logger.info("no update on web " + summary_url)
+        logger.info("no update on web " + _summary_url)
     return retPath
 
 
@@ -162,10 +192,11 @@ intervalTime = 60 * 1
 
 # Main function to monitor and process updates
 def main():
+    local_folder = "./download"
     os.makedirs(local_folder, exist_ok=True)
 
     while True:
-        path = check_download_summary()
+        path = check_download_summary(local_folder)
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         if path:
             print("Main: updated at", timestamp, " new file path is ", path)
