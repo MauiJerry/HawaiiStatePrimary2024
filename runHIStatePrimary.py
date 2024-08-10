@@ -172,8 +172,17 @@ def main():
     print("Starting runHIStatePrimary - tool to retrieve primary results and forward them to tricaster")
     runHIStatePrimary()
 
-
+import sys
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(name)s l:%(lineno)d m:%(module)s.py f():%(funcName)s: %(message)s')
-    main()
+    # main()
+
+    try:
+        while True:
+            main()
+            print("Running 2024 HI State Primary Results Tool... Press Ctrl+C to stop.")
+    except KeyboardInterrupt:
+        print("\nKeyboardInterrupt caught. Cleaning up and exiting...")
+        # Perform any cleanup here
+        sys.exit(0)
