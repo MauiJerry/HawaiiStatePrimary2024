@@ -4,7 +4,7 @@ import logging
 from candidates import Candidate, list_candidates
 from contests import Contest, list_contests
 from results import load_results, finalize_results
-from datalink import write_datalink
+from datalink import write_datalink, copy_to_tricaster
 from retrieveStateSummary import check_download_summary, fake_data_file
 from makeDocx import generate_opendoc
 import shutil
@@ -93,13 +93,12 @@ def runHIStatePrimary():
     contests = Contest.from_csv(contest_file_path)
     logger.debug(f"Contests loaded: {candidates}")
 
-    logger.info("wait_for_real_data {wait_for_real_data}")
-
     wait_for_real_data = os.getenv("WAIT_FOR_REAL")
     if wait_for_real_data == "TRUE":
         wait_for_real_data = True
     else:
         wait_for_real_data = False
+    logger.info(f"wait_for_real_data {wait_for_real_data}")
 
 
     # Enter an infinite loop to check for updates
@@ -113,10 +112,9 @@ def runHIStatePrimary():
             logger.info("State has not posted real data yet, continue Waiting\n")
             continue
 
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
         # If a new summary file is retrieved, process it
         if path:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M')
             if doDownload:
                 shutil.copy(path, state_summary_file_path)
                 logger.info(f"{timestamp} Copied new state summary to {state_summary_file_path}")
@@ -128,16 +126,16 @@ def runHIStatePrimary():
             # Export the processed data
             write_datalink(contests, candidates, datalink_file_path)
 
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             copy_data_link_name = os.path.join(output_folder, f'{datalink_file_name}_{timestamp}.csv')
             shutil.copy(datalink_file_path, copy_data_link_name)
+            copy_to_tricaster(copy_data_link_name)
 
             # export into a DocX (word document)
             docx_file_path = os.path.join(output_folder, f'{docx_base_name}_{timestamp}.docx')
             generate_opendoc(contests, candidates, docx_file_path)
             print_file(docx_file_path)
 
-            logger.info("Processed and exported new data." + timestamp)
+            logger.info("Processed and exported new data time: " + timestamp)
             print("\n", timestamp, "Updated datalink at ", datalink_file_path)
         else:
             logger.info("No update, back to sleep." + timestamp)
@@ -177,5 +175,5 @@ def main():
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
-                        format='%(asctime)s - %(name)s - %(module)s - %(funcName)s - %(levelname)s - %(message)s')
+                        format='%(asctime)s - %(levelname)s - %(name)s l:%(lineno)d m:%(module)s.py f():%(funcName)s: %(message)s')
     main()

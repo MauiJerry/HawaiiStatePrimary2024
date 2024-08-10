@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import logging
 
 logger = logging.getLogger(__name__)
-#logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG)
 
 def load_config_env():
     logger.debug(f"Loading configuration from config.env: ")
@@ -29,6 +29,9 @@ def load_config_env():
     password = os.getenv("HI_PASSWORD")
     datalink_folder = os.getenv("DATALINK_FOLDER")
 
+    tricaster_host = os.getenv("TRICASTER_HOST")
+
     logger.debug(f"Loaded Username: {username}, Password: {password}, _pauseUntilReal{wait_for_real_data}")
     logger.debug(f"datalink folder {datalink_folder}")
     logger.debug(f"Summary URL {summary_url}")
+    logger.debug(f"tricaster_host {tricaster_host} type is {type(tricaster_host)}")

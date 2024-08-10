@@ -9,7 +9,7 @@ import shutil
 from load_config import load_config_env
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+#logger.setLevel(logging.DEBUG)
 
 # These are set from config.env on first attempt
 
