@@ -6,28 +6,29 @@ from datetime import datetime
 import logging
 import chardet
 import shutil
-from dotenv import load_dotenv
+from load_config import load_config_env
 
 logger = logging.getLogger(__name__)
-#logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG)
+
+# These are set from config.env on first attempt
 
 # URL and file paths
-_website_url = 'http://elections.hawaii.gov/files/media.txt'
-_summary_url = None
-
-# User credentials
-_username = None
-_password = None
+website_url = 'http://elections.hawaii.gov/files/media.txt'
 
 fake_data_file = "./data/fake_summary.txt"
 
 # Function to check for updates on the website
 def check_for_updates():
-    global _summary_url, _username, _password
+    global summary_url, username, password
 
-    logger.debug(f"Checking {_summary_url}, u: {_username} p:{_password}")
+    summary_url = os.getenv("SUMMARY_URL")
+    username = os.getenv("HI_USERNAME")
+    password = os.getenv("HI_PASSWORD")
 
-    response = requests.head(_summary_url, auth=HTTPBasicAuth(_username, _password))
+    logger.debug(f"Checking for updates: {summary_url}, u: {username} p:{password}")
+
+    response = requests.head(summary_url, auth=HTTPBasicAuth(username, password))
     if response.status_code == 200:
         return response.headers['Last-Modified']
     else:
@@ -36,8 +37,12 @@ def check_for_updates():
 
 # Function to download the updated CSV file with a timestamp
 def download_summary(local_folder):
-    global _summary_url, _username, _password
-    response = requests.get(_summary_url, auth=HTTPBasicAuth(_username, _password))
+    global summary_url, username, password
+    summary_url = os.getenv("SUMMARY_URL")
+    username = os.getenv("HI_USERNAME")
+    password = os.getenv("HI_PASSWORD")
+
+    response = requests.get(summary_url, auth=HTTPBasicAuth(username, password))
     if response.status_code == 200:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         timestamped_file_path = os.path.join(local_folder, f'summary_{timestamp}.txt')
@@ -132,19 +137,12 @@ def strip_file(filepath):
         return str(e), None
 
 
+
 def check_download_summary(local_folder):
-    global _summary_url, _username, _password, _pauseUntilReal
 
     if not hasattr(check_download_summary, "last_modified_time"):
         check_download_summary.last_modified_time = 'None'  # Initialize the static variable
-        print("First Time - load username/password from env")
-        load_dotenv(dotenv_path='config.env')
-        _pauseUntilReal = os.getenv("PAUSE_UNTIL_REAL")
-        _summary_url = os.getenv("SUMMARY_URL")
-        _username = os.getenv("HI_USERNAME")
-        _password = os.getenv("HI_PASSWORD")
-        print(f"Loaded Username: {_username}, Password: {_password}, _pauseUntilReal{_pauseUntilReal}")
-        print(f"Summary URL {_summary_url}")
+        # load_config_env()
 
     current_modified_time = check_for_updates()
 
@@ -169,7 +167,7 @@ def check_download_summary(local_folder):
                 logger.info("no need to strip lines use " + origPath)
             check_download_summary.last_modified_time = current_modified_time
     else:
-        logger.info("no update on web " + _summary_url)
+        logger.info("no update on web " + summary_url)
     return retPath
 
 
@@ -194,6 +192,7 @@ intervalTime = 60 * 1
 def main():
     local_folder = "./download"
     os.makedirs(local_folder, exist_ok=True)
+    load_config_env()
 
     while True:
         path = check_download_summary(local_folder)

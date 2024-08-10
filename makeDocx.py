@@ -2,6 +2,8 @@ from docx import Document
 from docx.shared import Inches, Pt
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
 
 from docx.enum.section import WD_ORIENT
 
@@ -62,8 +64,13 @@ def estimate_table_size(c_in_c, font_size=24, padding=2):
 
 
 def generate_opendoc(contests, candidates, file_path):
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
+
     doc = Document()
-    doc.add_heading('Election Results', 0)
+
+    # header on every page
+    header = doc.sections[0].header
+    header.add_paragraph(f'Hawaii State Primary Election Results {timestamp}')
 
     #estimate contest heights to insert page breaks
     # Set page layout (optional, if you need to switch to landscape mode)

@@ -12,10 +12,10 @@ from datetime import datetime
 import win32print
 import win32api
 
-check_state_interval = 60 * 10
+from load_config import load_config_env
+
+check_state_interval = 60 * 10 # 60sec * N minutes
 doDownload = True
-wait_for_real_data = False
-actually_print = True
 
 # Configure local logger
 logger = logging.getLogger(__name__)
@@ -33,13 +33,6 @@ results_file_name = "results.csv"
 datalink_file_name = "datalink.csv"
 state_summary_file_name = "summary.csv"
 docx_base_name = "primary_results"
-
-# Construct the file paths
-contest_file_path = os.path.join(data_folder, contest_file_name)
-candidate_file_path = os.path.join(data_folder, candidate_file_name)
-results_file_path = os.path.join(data_folder, results_file_name)
-datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
-state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
 
 
 def print_file(file_path):
@@ -59,6 +52,12 @@ def print_file(file_path):
     # # Apply the settings
     # win32print.SetPrinter(printer_handle, 2, printer_info, 0)
     # win32print.ClosePrinter(printer_handle)
+
+    actually_print = os.getenv("ACTUALLY_PRINT")
+    if actually_print == "TRUE":
+        actually_print = True
+    else:
+        actually_print = False
 
     # Print the file
     print(f"Printing {file_path} on {printer_name}")
@@ -87,11 +86,21 @@ def copy_summary_to_data(input_filepath):
 
 def runHIStatePrimary():
     # Load candidates and contests
+
     candidates = Candidate.from_csv(candidate_file_path)
     logger.debug(f"Candidates loaded: {candidates}")
     # list_candidates(candidates)
     contests = Contest.from_csv(contest_file_path)
     logger.debug(f"Contests loaded: {candidates}")
+
+    logger.info("wait_for_real_data {wait_for_real_data}")
+
+    wait_for_real_data = os.getenv("WAIT_FOR_REAL")
+    if wait_for_real_data == "TRUE":
+        wait_for_real_data = True
+    else:
+        wait_for_real_data = False
+
 
     # Enter an infinite loop to check for updates
     while True:
@@ -143,10 +152,25 @@ def runHIStatePrimary():
 
 
 def main():
+    global contest_file_path, candidate_file_path, results_file_path, datalink_file_path
+    global state_summary_file_path
+
+    load_config_env()
+
+    datalink_folder = os.getenv("DATALINK_FOLDER")
+
     os.makedirs(data_folder, exist_ok=True)
     os.makedirs(download_folder, exist_ok=True)
     os.makedirs(datalink_folder, exist_ok=True)
     os.makedirs(output_folder, exist_ok=True)
+
+    # Construct the file paths
+    contest_file_path = os.path.join(data_folder, contest_file_name)
+    candidate_file_path = os.path.join(data_folder, candidate_file_name)
+    results_file_path = os.path.join(data_folder, results_file_name)
+    datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
+    state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
+
     print("Starting runHIStatePrimary - tool to retrieve primary results and forward them to tricaster")
     runHIStatePrimary()
 

@@ -13,6 +13,7 @@ logger.setLevel(logging.DEBUG)
 
 def write_datalink(contests, candidates, datalink_filepath):
     try:
+        print(f"Writing datalink to {datalink_filepath}")
         with open(datalink_filepath, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
 
