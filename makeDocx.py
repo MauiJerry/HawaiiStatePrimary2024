@@ -11,6 +11,9 @@ from contests import Contest, list_contests
 from datetime import datetime
 import os
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+# logger.setLevel(logging.DEBUG)
 
 def candidates_in_contest(candidates, contest_id):
     # Filter candidates based on contest_id
@@ -72,25 +75,25 @@ def generate_opendoc(contests, candidates, file_path):
     section.page_height = Inches(11)
 
     current_height = 0
-    page_height_limit = 250  # wild estimate
+    page_height_limit = 200  # wild estimate
 
     for contest_id, contest in contests.items():
 
         c_in_c = candidates_in_contest(candidates, contest_id)
-        # print(f"contest {contest.datalink_value} len c_in_c: {len(c_in_c)} = {c_in_c}")
+        logger.debug(f"contest {contest.datalink_value} len c_in_c: {len(c_in_c)} = {c_in_c}")
         estimated_height = estimate_table_size(c_in_c)
 
-        # print(f"cur {current_height} + {estimated_height} = {current_height + estimated_height}>? {page_height_limit}")
+        logger.debug(f"cur {current_height} + {estimated_height} = {current_height + estimated_height}>? {page_height_limit}")
 
         # Check if the contest fits on the current page
         if current_height + estimated_height > page_height_limit:
             doc.add_page_break()
-            # print("adding break")
+            logger.debug("adding break")
             current_height = 0  # Reset the current height for the new page
         # else:
-        #     print("no need to add break")
+        #     logger.debug("no need to add break")
         current_height += estimated_height  # Add the contest's height to the current page height
-        # print(f"page height now {current_height}\n")
+        logger.debug(f"page height now {current_height}\n")
 
         heading = doc.add_heading(contest.datalink_value, level=1)
 
@@ -148,4 +151,4 @@ def generate_opendoc(contests, candidates, file_path):
                 r.rPr.rFonts.set(qn('w:eastAsia'), 'Arial')
 
     doc.save(file_path)
-    print(f"Saved Formated Results to {file_path}")
+    logger.debug(f"Saved Formated Results to {file_path}")

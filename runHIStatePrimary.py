@@ -12,10 +12,10 @@ from datetime import datetime
 import win32print
 import win32api
 
-check_state_interval = 60 * 1
-doDownload = False
-wait_for_real_data = True
-actually_print = False
+check_state_interval = 60 * 10
+doDownload = True
+wait_for_real_data = False
+actually_print = True
 
 # Configure local logger
 logger = logging.getLogger(__name__)
@@ -46,6 +46,20 @@ def print_file(file_path):
     global actually_print
     # Get the default printer
     printer_name = win32print.GetDefaultPrinter()
+    # Set the printer to disable duplex mode
+    # would b nice do force single sided but currently SetPrinter fives access denied error
+    # printer_name = win32print.GetDefaultPrinter()
+    # printer_handle = win32print.OpenPrinter(printer_name)
+    # printer_info = win32print.GetPrinter(printer_handle, 2)
+    # devmode = printer_info['pDevMode']
+    #
+    # # Disable duplex (set to 1 for no duplex)
+    # devmode.Duplex = 1
+    #
+    # # Apply the settings
+    # win32print.SetPrinter(printer_handle, 2, printer_info, 0)
+    # win32print.ClosePrinter(printer_handle)
+
     # Print the file
     print(f"Printing {file_path} on {printer_name}")
     if actually_print:
@@ -123,7 +137,8 @@ def runHIStatePrimary():
         # Sleep for a while before checking again
         if not doDownload:
             break  # no need to repeat
-        time.sleep(check_state_interval)  # Check for updates every 60 seconds
+        print(f"Sleep for {check_state_interval} seconds ... {check_state_interval/60} minutes")
+        time.sleep(check_state_interval)  # Check for updates every N seconds
     print("Finished while Loop")
 
 
