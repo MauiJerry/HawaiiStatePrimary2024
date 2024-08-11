@@ -1,6 +1,13 @@
 import subprocess
 import os
 import shutil
+import logging
+
+
+# Configure local logger
+logger = logging.getLogger(__name__)
+#logger.setLevel(logging.DEBUG)
+
 
 # Define your main script file and additional options
 script_file = 'runHIStatePrimary.py'
@@ -14,13 +21,21 @@ command = [
     script_file
 ]
 
+exe_filename = os.path.splitext(script_file)[0] + '.exe'
+
 # Run the command
-subprocess.run(command, check=True)
+res = subprocess.run(command, check=True)
 
 # Move the executable to a desired location (optional)
-dist_dir = 'dist'
-exe_filename = os.path.splitext(script_file)[0] + '.exe'
+dist_dir = './dist'
 exe_file = os.path.join(dist_dir, exe_filename )
+print(f"Result of pyinstaller {res} \n\tshould be at {exe_file}")
+if os.path.isfile(exe_file):
+    print ("Exe file exists")
+else:
+    print("WARNING: exe file does not seem to exist")
+    logger.error(f"Failed to create exe {exe_file}")
+    raise ValueError(f"Failed to create exe {exe_file}")
 
 data_folder = "data"
 dist_data_folder = os.path.join(dist_dir, data_folder)

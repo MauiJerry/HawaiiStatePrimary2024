@@ -3,6 +3,8 @@ import os
 import shutil
 import csv
 import logging
+import win32com.client
+import shutil
 import math
 from candidates import Candidate
 from contests import Contest
@@ -18,35 +20,50 @@ def copy_to_tricaster(source_datalink_file):
     tricaster_user = os.getenv("TRICASTER_USER")
     tricaster_pwd = os.getenv("TRICASTER_PWD")
 
-    if tricaster_host is None or tricaster_host == "None":
-        logger.info("No tricaster defined, dont copy file")
-        return
-
-    # Construct the network path
-    network_path = f"\\\\{tricaster_host}\\{tricaster_datalink_path}"
-
-    # Check if the network path is already accessible using os.popen()
-    with os.popen(f'dir {network_path}') as stream:
-        output = stream.read()
-
-    # If the network path is not accessible, attempt to mount it
-    if "File Not Found" in output or "cannot find" in output.lower():
-        print(f"Network path {network_path} not accessible, attempting to mount...")
-        with os.popen(f'net use {network_path} /user:{tricaster_user} {tricaster_pwd}') as mount_stream:
-            mount_output = mount_stream.read()
-            logger.info(f"Opened Tricaster {mount_output} {network_path}")
-    else:
-        logger.debug(f"Network path {network_path} is already accessible.")
-
+    # if tricaster_host is None or tricaster_host == "None":
+    #     logger.info("No tricaster defined, dont copy file")
+    #     return
+    #
+    # # Construct the network path
+    # network_path = f"\\\\{tricaster_host}\\{tricaster_datalink_path}"
+    #
+    # # Check if the network path is already accessible using os.popen()
+    # with os.popen(f'dir {network_path}') as stream:
+    #     output = stream.read()
+    #
+    # # If the network path is not accessible, attempt to mount it
+    # if "File Not Found" in output or "cannot find" in output.lower():
+    #     print(f"Network path {network_path} not accessible, attempting to mount...")
+    #     with os.popen(f'net use {network_path} /user:{tricaster_user} {tricaster_pwd}') as mount_stream:
+    #         mount_output = mount_stream.read()
+    #         logger.info(f"Opened Tricaster {mount_output} {network_path}")
+    # else:
+    #     logger.debug(f"Network path {network_path} is already accessible.")
+    #
     # Construct the destination file path
-    destination_file = os.path.join(network_path, 'datalink.csv')
+    destination_file = os.path.join(tricaster_datalink_path, 'datalink.csv')
 
     # Copy the file to the Tricaster folder
     try:
-        shutil.copy(datalink_file_path, destination_file)
-        logger.info(f"File copied successfully to {destination_file}")
+        shutil.copy(source_datalink_file, destination_file)
+        logger.info(f"Tricaster File copied successfully to {destination_file}")
+        print(f"Tricaster File copied successfully to {destination_file}")
     except Exception as e:
         logger.warning(f"Failed to copy file to tricaster: {e}")
+
+def copy_to_sharedFolder(source_file):
+    print(f"copy_to_sharedFolder")
+    shortcutFolder = 'linkToShared.lnk'
+    shell = win32com.client.Dispatch("WScript.Shell")
+    shortcut = shell.CreateShortcut(shortcutFolder)
+
+    shortcutTargetPath = shortcut.TargetPath
+    if not os.path.isdir(shortcutTargetPath):
+        logger.warning(f"shortcut is not dir folder {shortcutFolder} {shortcutTargetPath}")
+        return
+
+    shutil.copy(source_file, shortcutTargetPath)
+    print(f"Should have copied file {source_file} to {shortcutFolder}")
 
 
 def write_datalink(contests, candidates, datalink_filepath):

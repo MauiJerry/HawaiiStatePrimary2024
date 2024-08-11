@@ -4,7 +4,7 @@ import logging
 from candidates import Candidate, list_candidates
 from contests import Contest, list_contests
 from results import load_results, finalize_results
-from datalink import write_datalink, copy_to_tricaster
+from datalink import write_datalink, copy_to_tricaster, copy_to_sharedFolder
 from retrieveStateSummary import check_download_summary, fake_data_file
 from makeDocx import generate_opendoc
 import shutil
@@ -14,7 +14,7 @@ import win32api
 
 from load_config import load_config_env
 
-check_state_interval = 60 * 10 # 60sec * N minutes
+check_state_interval = 60 * 1 # 60sec * N minutes
 doDownload = True
 
 # Configure local logger
@@ -85,6 +85,28 @@ def copy_summary_to_data(input_filepath):
 
 
 def runHIStatePrimary():
+    global contest_file_path, candidate_file_path, results_file_path, datalink_file_path
+    global state_summary_file_path
+
+    load_config_env()
+
+    check_state_interval = 60 * int(os.getenv("SLEEP_MINUTES"))
+    logger.info(f"Sleep seconds {check_state_interval}")
+
+    datalink_folder = os.getenv("DATALINK_FOLDER")
+    print("Main: datalink_folder", datalink_folder)
+
+    os.makedirs(data_folder, exist_ok=True)
+    os.makedirs(download_folder, exist_ok=True)
+    os.makedirs(datalink_folder, exist_ok=True)
+    os.makedirs(output_folder, exist_ok=True)
+
+    # Construct the file paths
+    contest_file_path = os.path.join(data_folder, contest_file_name)
+    candidate_file_path = os.path.join(data_folder, candidate_file_name)
+    results_file_path = os.path.join(data_folder, results_file_name)
+    datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
+    state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
     # Load candidates and contests
 
     candidates = Candidate.from_csv(candidate_file_path)
@@ -99,7 +121,7 @@ def runHIStatePrimary():
     else:
         wait_for_real_data = False
     logger.info(f"wait_for_real_data {wait_for_real_data}")
-
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M')
 
     # Enter an infinite loop to check for updates
     while True:
@@ -128,7 +150,8 @@ def runHIStatePrimary():
 
             copy_data_link_name = os.path.join(output_folder, f'{datalink_file_name}_{timestamp}.csv')
             shutil.copy(datalink_file_path, copy_data_link_name)
-            copy_to_tricaster(copy_data_link_name)
+            #copy_to_tricaster(copy_data_link_name)
+            copy_to_sharedFolder(datalink_file_path)
 
             # export into a DocX (word document)
             docx_file_path = os.path.join(output_folder, f'{docx_base_name}_{timestamp}.docx')
@@ -156,6 +179,7 @@ def main():
     load_config_env()
 
     datalink_folder = os.getenv("DATALINK_FOLDER")
+    print("Main: datalink_folder", datalink_folder)
 
     os.makedirs(data_folder, exist_ok=True)
     os.makedirs(download_folder, exist_ok=True)

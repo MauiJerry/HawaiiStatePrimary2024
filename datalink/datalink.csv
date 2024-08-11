@@ -1,93 +1,93 @@
 USSenate01-GREEN,US Senate (G)
-USSenate01-GREEN-blankover-COUNT,4,USSenate01-GREEN-blankover-PCT,14.3%
-USSenate01-GREEN-candidate-01,Emma Jane Avila POHLMAN,USSenate01-GREEN-candidate-01-VOTE,24,USSenate01-GREEN-candidate-01-PCT,85.7%
+USSenate01-GREEN-blankover-COUNT,3995,USSenate01-GREEN-blankover-PCT,76.6%
+USSenate01-GREEN-candidate-01,Emma Jane Avila POHLMAN,USSenate01-GREEN-candidate-01-VOTE,1221,USSenate01-GREEN-candidate-01-PCT,23.4%
 USSenate01-REPUB,US Senate (R)
-USSenate01-REPUB-blankover-COUNT,18,USSenate01-REPUB-blankover-PCT,16.1%
-USSenate01-REPUB-candidate-01,Adriel C. LAM,USSenate01-REPUB-candidate-01-VOTE,52,USSenate01-REPUB-candidate-01-PCT,46.4%
-USSenate01-REPUB-candidate-02,Bob MCDERMOTT,USSenate01-REPUB-candidate-02-VOTE,17,USSenate01-REPUB-candidate-02-PCT,15.2%
-USSenate01-REPUB-candidate-03,Melba AMARAL,USSenate01-REPUB-candidate-03-VOTE,16,USSenate01-REPUB-candidate-03-PCT,14.3%
-USSenate01-REPUB-candidate-04,Paul DOLAN,USSenate01-REPUB-candidate-04-VOTE,4,USSenate01-REPUB-candidate-04-PCT,3.6%
-USSenate01-REPUB-candidate-05,Arturo P. REYES,USSenate01-REPUB-candidate-05-VOTE,4,USSenate01-REPUB-candidate-05-PCT,3.6%
-USSenate01-REPUB-candidate-06,Emmanuel TIPON,USSenate01-REPUB-candidate-06-VOTE,1,USSenate01-REPUB-candidate-06-PCT,0.9%
+USSenate01-REPUB-blankover-COUNT,7438,USSenate01-REPUB-blankover-PCT,13.6%
+USSenate01-REPUB-candidate-01,Adriel C. LAM,USSenate01-REPUB-candidate-01-VOTE,7458,USSenate01-REPUB-candidate-01-PCT,13.7%
+USSenate01-REPUB-candidate-02,Bob MCDERMOTT,USSenate01-REPUB-candidate-02-VOTE,24668,USSenate01-REPUB-candidate-02-PCT,45.2%
+USSenate01-REPUB-candidate-03,Melba AMARAL,USSenate01-REPUB-candidate-03-VOTE,6545,USSenate01-REPUB-candidate-03-PCT,12.0%
+USSenate01-REPUB-candidate-04,Paul DOLAN,USSenate01-REPUB-candidate-04-VOTE,3613,USSenate01-REPUB-candidate-04-PCT,6.6%
+USSenate01-REPUB-candidate-05,Arturo P. REYES,USSenate01-REPUB-candidate-05-VOTE,2980,USSenate01-REPUB-candidate-05-PCT,5.5%
+USSenate01-REPUB-candidate-06,Emmanuel TIPON,USSenate01-REPUB-candidate-06-VOTE,1844,USSenate01-REPUB-candidate-06-PCT,3.4%
 USSenate01-DEM,US Senate (D)
-USSenate01-DEM-blankover-COUNT,15,USSenate01-DEM-blankover-PCT,22.4%
-USSenate01-DEM-candidate-01,Mazie K. HIRONO,USSenate01-DEM-candidate-01-VOTE,25,USSenate01-DEM-candidate-01-PCT,37.3%
-USSenate01-DEM-candidate-02,Ron CURTIS,USSenate01-DEM-candidate-02-VOTE,23,USSenate01-DEM-candidate-02-PCT,34.3%
-USSenate01-DEM-candidate-03,Clyde McClain (Mac) LEWMAN,USSenate01-DEM-candidate-03-VOTE,4,USSenate01-DEM-candidate-03-PCT,6.0%
+USSenate01-DEM-blankover-COUNT,12198,USSenate01-DEM-blankover-PCT,6.4%
+USSenate01-DEM-candidate-01,Mazie K. HIRONO,USSenate01-DEM-candidate-01-VOTE,161629,USSenate01-DEM-candidate-01-PCT,84.8%
+USSenate01-DEM-candidate-02,Ron CURTIS,USSenate01-DEM-candidate-02-VOTE,12913,USSenate01-DEM-candidate-02-PCT,6.8%
+USSenate01-DEM-candidate-03,Clyde McClain (Mac) LEWMAN,USSenate01-DEM-candidate-03-VOTE,3787,USSenate01-DEM-candidate-03-PCT,2.0%
 USSenate01-NONP,US Senate (N)
-USSenate01-NONP-blankover-COUNT,8,USSenate01-NONP-blankover-PCT,32.0%
-USSenate01-NONP-candidate-01,John (Raghu) GIUFFRE,USSenate01-NONP-candidate-01-VOTE,17,USSenate01-NONP-candidate-01-PCT,68.0%
+USSenate01-NONP-blankover-COUNT,4705,USSenate01-NONP-blankover-PCT,84.2%
+USSenate01-NONP-candidate-01,John (Raghu) GIUFFRE,USSenate01-NONP-candidate-01-VOTE,881,USSenate01-NONP-candidate-01-PCT,15.8%
 USSenate01-WE,US Senate (We The People)
-USSenate01-WE-blankover-COUNT,8,USSenate01-WE-blankover-PCT,32.0%
-USSenate01-WE-candidate-01,Shelby Pikachu BILLIONAIRE,USSenate01-WE-candidate-01-VOTE,17,USSenate01-WE-candidate-01-PCT,68.0%
+USSenate01-WE-blankover-COUNT,3344,USSenate01-WE-blankover-PCT,79.6%
+USSenate01-WE-candidate-01,Shelby Pikachu BILLIONAIRE,USSenate01-WE-candidate-01-VOTE,856,USSenate01-WE-candidate-01-PCT,20.4%
 USHouse01-REPUB,US House District 1 (R)
-USHouse01-REPUB-blankover-COUNT,7,USHouse01-REPUB-blankover-PCT,12.5%
-USHouse01-REPUB-candidate-01,Patrick C. LARGEY,USHouse01-REPUB-candidate-01-VOTE,49,USHouse01-REPUB-candidate-01-PCT,87.5%
+USHouse01-REPUB-blankover-COUNT,10869,USHouse01-REPUB-blankover-PCT,41.3%
+USHouse01-REPUB-candidate-01,Patrick C. LARGEY,USHouse01-REPUB-candidate-01-VOTE,15479,USHouse01-REPUB-candidate-01-PCT,58.7%
 USHouse01-DEM,US House District 1 (D)
-USHouse01-DEM-blankover-COUNT,7,USHouse01-DEM-blankover-PCT,31.8%
-USHouse01-DEM-candidate-01,Ed CASE,USHouse01-DEM-candidate-01-VOTE,8,USHouse01-DEM-candidate-01-PCT,36.4%
-USHouse01-DEM-candidate-02,Cecil R. HALE,USHouse01-DEM-candidate-02-VOTE,7,USHouse01-DEM-candidate-02-PCT,31.8%
+USHouse01-DEM-blankover-COUNT,9868,USHouse01-DEM-blankover-PCT,10.4%
+USHouse01-DEM-candidate-01,Ed CASE,USHouse01-DEM-candidate-01-VOTE,78379,USHouse01-DEM-candidate-01-PCT,82.5%
+USHouse01-DEM-candidate-02,Cecil R. HALE,USHouse01-DEM-candidate-02-VOTE,6731,USHouse01-DEM-candidate-02-PCT,7.1%
 USHouse01-NONP,US House District 1 (N)
-USHouse01-NONP-blankover-COUNT,6,USHouse01-NONP-blankover-PCT,37.5%
-USHouse01-NONP-candidate-01,Calvin GRIFFIN,USHouse01-NONP-candidate-01-VOTE,10,USHouse01-NONP-candidate-01-PCT,62.5%
+USHouse01-NONP-blankover-COUNT,2426,USHouse01-NONP-blankover-PCT,86.6%
+USHouse01-NONP-candidate-01,Calvin GRIFFIN,USHouse01-NONP-candidate-01-VOTE,377,USHouse01-NONP-candidate-01-PCT,13.4%
 USHouse02-REPUB,US House District 2 (R)
-USHouse02-REPUB-blankover-COUNT,15,USHouse02-REPUB-blankover-PCT,30.0%
-USHouse02-REPUB-candidate-01,Steve BOND,USHouse02-REPUB-candidate-01-VOTE,35,USHouse02-REPUB-candidate-01-PCT,70.0%
+USHouse02-REPUB-blankover-COUNT,11202,USHouse02-REPUB-blankover-PCT,40.1%
+USHouse02-REPUB-candidate-01,Steve BOND,USHouse02-REPUB-candidate-01-VOTE,16745,USHouse02-REPUB-candidate-01-PCT,59.9%
 USHouse02-DEM,US House District 2 (D)
-USHouse02-DEM-blankover-COUNT,14,USHouse02-DEM-blankover-PCT,31.8%
-USHouse02-DEM-candidate-01,Jill N. TOKUDA,USHouse02-DEM-candidate-01-VOTE,30,USHouse02-DEM-candidate-01-PCT,68.2%
+USHouse02-DEM-blankover-COUNT,18527,USHouse02-DEM-blankover-PCT,19.4%
+USHouse02-DEM-candidate-01,Jill N. TOKUDA,USHouse02-DEM-candidate-01-VOTE,77015,USHouse02-DEM-candidate-01-PCT,80.6%
 USHouse02-NONP,US House District 2 (N)
-USHouse02-NONP-blankover-COUNT,2,USHouse02-NONP-blankover-PCT,25.0%
-USHouse02-NONP-candidate-01,Randall Kelly MEYER,USHouse02-NONP-candidate-01-VOTE,6,USHouse02-NONP-candidate-01-PCT,75.0%
+USHouse02-NONP-blankover-COUNT,2748,USHouse02-NONP-blankover-PCT,83.8%
+USHouse02-NONP-candidate-01,Randall Kelly MEYER,USHouse02-NONP-candidate-01-VOTE,533,USHouse02-NONP-candidate-01-PCT,16.2%
 USHouse02-LIBER,US House District 2 (L)
-USHouse02-LIBER-blankover-COUNT,1,USHouse02-LIBER-blankover-PCT,8.3%
-USHouse02-LIBER-candidate-01,Aaron TOMAN,USHouse02-LIBER-candidate-01-VOTE,11,USHouse02-LIBER-candidate-01-PCT,91.7%
+USHouse02-LIBER-blankover-COUNT,1651,USHouse02-LIBER-blankover-PCT,83.9%
+USHouse02-LIBER-candidate-01,Aaron TOMAN,USHouse02-LIBER-candidate-01-VOTE,316,USHouse02-LIBER-candidate-01-PCT,16.1%
 StateHouse10-DEM,State House District 10 (D)
-StateHouse10-DEM-blankover-COUNT,0,StateHouse10-DEM-blankover-PCT,0.0%
-StateHouse10-DEM-candidate-01,Jeremiah SAVAGE,StateHouse10-DEM-candidate-01-VOTE,4,StateHouse10-DEM-candidate-01-PCT,100.0%
-StateHouse10-DEM-candidate-02,Tyson K. MIYAKE,StateHouse10-DEM-candidate-02-VOTE,0,StateHouse10-DEM-candidate-02-PCT,0.0%
+StateHouse10-DEM-blankover-COUNT,523,StateHouse10-DEM-blankover-PCT,12.1%
+StateHouse10-DEM-candidate-01,Jeremiah SAVAGE,StateHouse10-DEM-candidate-01-VOTE,705,StateHouse10-DEM-candidate-01-PCT,16.3%
+StateHouse10-DEM-candidate-02,Tyson K. MIYAKE,StateHouse10-DEM-candidate-02-VOTE,3085,StateHouse10-DEM-candidate-02-PCT,71.5%
 StateHouse13-REPUB,State House District 13 (R)
-StateHouse13-REPUB-blankover-COUNT,0,StateHouse13-REPUB-blankover-PCT,0.0%
-StateHouse13-REPUB-candidate-01,Scott ADAM,StateHouse13-REPUB-candidate-01-VOTE,1,StateHouse13-REPUB-candidate-01-PCT,100.0%
+StateHouse13-REPUB-blankover-COUNT,282,StateHouse13-REPUB-blankover-PCT,38.5%
+StateHouse13-REPUB-candidate-01,Scott ADAM,StateHouse13-REPUB-candidate-01-VOTE,451,StateHouse13-REPUB-candidate-01-PCT,61.5%
 StateHouse13-DEM,State House District 13 (D)
-StateHouse13-DEM-blankover-COUNT,1,StateHouse13-DEM-blankover-PCT,25.0%
-StateHouse13-DEM-candidate-01,Mahina POEPOE,StateHouse13-DEM-candidate-01-VOTE,3,StateHouse13-DEM-candidate-01-PCT,75.0%
-StateHouse13-DEM-candidate-02,Linda Ha'i CLARK,StateHouse13-DEM-candidate-02-VOTE,0,StateHouse13-DEM-candidate-02-PCT,0.0%
+StateHouse13-DEM-blankover-COUNT,486,StateHouse13-DEM-blankover-PCT,14.7%
+StateHouse13-DEM-candidate-01,Mahina POEPOE,StateHouse13-DEM-candidate-01-VOTE,2154,StateHouse13-DEM-candidate-01-PCT,65.0%
+StateHouse13-DEM-candidate-02,Linda Ha'i CLARK,StateHouse13-DEM-candidate-02-VOTE,672,StateHouse13-DEM-candidate-02-PCT,20.3%
 StateHouse14-REPUB,State House District 14 (R)
-StateHouse14-REPUB-blankover-COUNT,1,StateHouse14-REPUB-blankover-PCT,14.3%
-StateHouse14-REPUB-candidate-01,Kelly J. ARMSTRONG,StateHouse14-REPUB-candidate-01-VOTE,6,StateHouse14-REPUB-candidate-01-PCT,85.7%
+StateHouse14-REPUB-blankover-COUNT,221,StateHouse14-REPUB-blankover-PCT,29.2%
+StateHouse14-REPUB-candidate-01,Kelly J. ARMSTRONG,StateHouse14-REPUB-candidate-01-VOTE,536,StateHouse14-REPUB-candidate-01-PCT,70.8%
 StateHouse14-DEM,State House District 14 (D)
-StateHouse14-DEM-blankover-COUNT,0,StateHouse14-DEM-blankover-PCT,0.0%
-StateHouse14-DEM-candidate-01,Elle COCHRAN,StateHouse14-DEM-candidate-01-VOTE,3,StateHouse14-DEM-candidate-01-PCT,100.0%
-StateHouse14-DEM-candidate-02,Kanamu BALINBIN,StateHouse14-DEM-candidate-02-VOTE,0,StateHouse14-DEM-candidate-02-PCT,0.0%
+StateHouse14-DEM-blankover-COUNT,318,StateHouse14-DEM-blankover-PCT,15.1%
+StateHouse14-DEM-candidate-01,Elle COCHRAN,StateHouse14-DEM-candidate-01-VOTE,1201,StateHouse14-DEM-candidate-01-PCT,57.0%
+StateHouse14-DEM-candidate-02,Kanamu BALINBIN,StateHouse14-DEM-candidate-02-VOTE,587,StateHouse14-DEM-candidate-02-PCT,27.9%
 OHA-HAWAII,OHA - Hawaii Island
-OHA-HAWAII-blankover-COUNT,71,OHA-HAWAII-blankover-PCT,25.3%
-OHA-HAWAII-candidate-01,Z. Ka'apana AKI,OHA-HAWAII-candidate-01-VOTE,96,OHA-HAWAII-candidate-01-PCT,34.2%
-OHA-HAWAII-candidate-02,Kaiali'i KAHELE,OHA-HAWAII-candidate-02-VOTE,53,OHA-HAWAII-candidate-02-PCT,18.9%
-OHA-HAWAII-candidate-03,Hope Alohalani CERMELJ,OHA-HAWAII-candidate-03-VOTE,34,OHA-HAWAII-candidate-03-PCT,12.1%
-OHA-HAWAII-candidate-04,Hulali WALTJEN-KUILIPULE,OHA-HAWAII-candidate-04-VOTE,27,OHA-HAWAII-candidate-04-PCT,9.6%
+OHA-HAWAII-blankover-COUNT,118334,OHA-HAWAII-blankover-PCT,48.2%
+OHA-HAWAII-candidate-01,Z. Ka'apana AKI,OHA-HAWAII-candidate-01-VOTE,30909,OHA-HAWAII-candidate-01-PCT,12.6%
+OHA-HAWAII-candidate-02,Kaiali'i KAHELE,OHA-HAWAII-candidate-02-VOTE,72228,OHA-HAWAII-candidate-02-PCT,29.4%
+OHA-HAWAII-candidate-03,Hope Alohalani CERMELJ,OHA-HAWAII-candidate-03-VOTE,14062,OHA-HAWAII-candidate-03-PCT,5.7%
+OHA-HAWAII-candidate-04,Hulali WALTJEN-KUILIPULE,OHA-HAWAII-candidate-04-VOTE,10157,OHA-HAWAII-candidate-04-PCT,4.1%
 OHA-MOLOKAI,OHA - Molokai
-OHA-MOLOKAI-blankover-COUNT,72,OHA-MOLOKAI-blankover-PCT,25.6%
-OHA-MOLOKAI-candidate-01,Luana ALAPA,OHA-MOLOKAI-candidate-01-VOTE,73,OHA-MOLOKAI-candidate-01-PCT,26.0%
-OHA-MOLOKAI-candidate-02,Lu Ann LANKFORD-FABORITO,OHA-MOLOKAI-candidate-02-VOTE,70,OHA-MOLOKAI-candidate-02-PCT,24.9%
-OHA-MOLOKAI-candidate-03,Gayla HALINIAK,OHA-MOLOKAI-candidate-03-VOTE,37,OHA-MOLOKAI-candidate-03-PCT,13.2%
-OHA-MOLOKAI-candidate-04,R. Kunani NIHIPALI,OHA-MOLOKAI-candidate-04-VOTE,29,OHA-MOLOKAI-candidate-04-PCT,10.3%
+OHA-MOLOKAI-blankover-COUNT,142706,OHA-MOLOKAI-blankover-PCT,58.1%
+OHA-MOLOKAI-candidate-01,Luana ALAPA,OHA-MOLOKAI-candidate-01-VOTE,50399,OHA-MOLOKAI-candidate-01-PCT,20.5%
+OHA-MOLOKAI-candidate-02,Lu Ann LANKFORD-FABORITO,OHA-MOLOKAI-candidate-02-VOTE,11256,OHA-MOLOKAI-candidate-02-PCT,4.6%
+OHA-MOLOKAI-candidate-03,Gayla HALINIAK,OHA-MOLOKAI-candidate-03-VOTE,10573,OHA-MOLOKAI-candidate-03-PCT,4.3%
+OHA-MOLOKAI-candidate-04,R. Kunani NIHIPALI,OHA-MOLOKAI-candidate-04-VOTE,30756,OHA-MOLOKAI-candidate-04-PCT,12.5%
 OHA-ATLARGE,OHA - At Large
-OHA-ATLARGE-blankover-COUNT,60,OHA-ATLARGE-blankover-PCT,21.4%
-OHA-ATLARGE-candidate-01,Lei AHU ISA,OHA-ATLARGE-candidate-01-VOTE,62,OHA-ATLARGE-candidate-01-PCT,22.1%
-OHA-ATLARGE-candidate-02,Brendon Kalei'aina LEE,OHA-ATLARGE-candidate-02-VOTE,58,OHA-ATLARGE-candidate-02-PCT,20.6%
-OHA-ATLARGE-candidate-03,Keli'i AKINA,OHA-ATLARGE-candidate-03-VOTE,31,OHA-ATLARGE-candidate-03-PCT,11.0%
-OHA-ATLARGE-candidate-04,Peter APO,OHA-ATLARGE-candidate-04-VOTE,27,OHA-ATLARGE-candidate-04-PCT,9.6%
-OHA-ATLARGE-candidate-05,Patty KAHANAMOKU-TERUYA,OHA-ATLARGE-candidate-05-VOTE,18,OHA-ATLARGE-candidate-05-PCT,6.4%
-OHA-ATLARGE-candidate-06,Leona M. KALIMA,OHA-ATLARGE-candidate-06-VOTE,17,OHA-ATLARGE-candidate-06-PCT,6.0%
-OHA-ATLARGE-candidate-07,Larry KAWAAUHAU,OHA-ATLARGE-candidate-07-VOTE,8,OHA-ATLARGE-candidate-07-PCT,2.8%
+OHA-ATLARGE-blankover-COUNT,107761,OHA-ATLARGE-blankover-PCT,43.9%
+OHA-ATLARGE-candidate-01,Lei AHU ISA,OHA-ATLARGE-candidate-01-VOTE,28753,OHA-ATLARGE-candidate-01-PCT,11.7%
+OHA-ATLARGE-candidate-02,Brendon Kalei'aina LEE,OHA-ATLARGE-candidate-02-VOTE,16864,OHA-ATLARGE-candidate-02-PCT,6.9%
+OHA-ATLARGE-candidate-03,Keli'i AKINA,OHA-ATLARGE-candidate-03-VOTE,36270,OHA-ATLARGE-candidate-03-PCT,14.8%
+OHA-ATLARGE-candidate-04,Peter APO,OHA-ATLARGE-candidate-04-VOTE,25129,OHA-ATLARGE-candidate-04-PCT,10.2%
+OHA-ATLARGE-candidate-05,Patty KAHANAMOKU-TERUYA,OHA-ATLARGE-candidate-05-VOTE,15726,OHA-ATLARGE-candidate-05-PCT,6.4%
+OHA-ATLARGE-candidate-06,Leona M. KALIMA,OHA-ATLARGE-candidate-06-VOTE,10329,OHA-ATLARGE-candidate-06-PCT,4.2%
+OHA-ATLARGE-candidate-07,Larry KAWAAUHAU,OHA-ATLARGE-candidate-07-VOTE,4858,OHA-ATLARGE-candidate-07-PCT,2.0%
 Council-SOUTHMAUI,County Council - S Maui
-Council-SOUTHMAUI-blankover-COUNT,6,Council-SOUTHMAUI-blankover-PCT,10.0%
-Council-SOUTHMAUI-candidate-01,Tom COOK,Council-SOUTHMAUI-candidate-01-VOTE,24,Council-SOUTHMAUI-candidate-01-PCT,40.0%
-Council-SOUTHMAUI-candidate-02,Kelly Takaya KING,Council-SOUTHMAUI-candidate-02-VOTE,22,Council-SOUTHMAUI-candidate-02-PCT,36.7%
-Council-SOUTHMAUI-candidate-03,Johnny Keoni PRONES,Council-SOUTHMAUI-candidate-03-VOTE,8,Council-SOUTHMAUI-candidate-03-PCT,13.3%
+Council-SOUTHMAUI-blankover-COUNT,3570,Council-SOUTHMAUI-blankover-PCT,14.0%
+Council-SOUTHMAUI-candidate-01,Tom COOK,Council-SOUTHMAUI-candidate-01-VOTE,10375,Council-SOUTHMAUI-candidate-01-PCT,40.8%
+Council-SOUTHMAUI-candidate-02,Kelly Takaya KING,Council-SOUTHMAUI-candidate-02-VOTE,10091,Council-SOUTHMAUI-candidate-02-PCT,39.7%
+Council-SOUTHMAUI-candidate-03,Johnny Keoni PRONES,Council-SOUTHMAUI-candidate-03-VOTE,1382,Council-SOUTHMAUI-candidate-03-PCT,5.4%
 Council-UPCOUNTRY,County Council - Upcountry
-Council-UPCOUNTRY-blankover-COUNT,4,Council-UPCOUNTRY-blankover-PCT,6.7%
-Council-UPCOUNTRY-candidate-01,Jocelyn N. CRUZ,Council-UPCOUNTRY-candidate-01-VOTE,24,Council-UPCOUNTRY-candidate-01-PCT,40.0%
-Council-UPCOUNTRY-candidate-02,Yuki Lei Kashiwa SUGIMURA,Council-UPCOUNTRY-candidate-02-VOTE,18,Council-UPCOUNTRY-candidate-02-PCT,30.0%
-Council-UPCOUNTRY-candidate-03,Edward (Ed) CODELIA,Council-UPCOUNTRY-candidate-03-VOTE,14,Council-UPCOUNTRY-candidate-03-PCT,23.3%
+Council-UPCOUNTRY-blankover-COUNT,4107,Council-UPCOUNTRY-blankover-PCT,16.2%
+Council-UPCOUNTRY-candidate-01,Jocelyn N. CRUZ,Council-UPCOUNTRY-candidate-01-VOTE,4408,Council-UPCOUNTRY-candidate-01-PCT,17.3%
+Council-UPCOUNTRY-candidate-02,Yuki Lei Kashiwa SUGIMURA,Council-UPCOUNTRY-candidate-02-VOTE,14975,Council-UPCOUNTRY-candidate-02-PCT,58.9%
+Council-UPCOUNTRY-candidate-03,Edward (Ed) CODELIA,Council-UPCOUNTRY-candidate-03-VOTE,1928,Council-UPCOUNTRY-candidate-03-PCT,7.6%

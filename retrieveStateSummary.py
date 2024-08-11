@@ -6,10 +6,11 @@ from datetime import datetime
 import logging
 import chardet
 import shutil
+import difflib
 from load_config import load_config_env
 
 logger = logging.getLogger(__name__)
-#logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG)
 
 # These are set from config.env on first attempt
 
@@ -18,19 +19,30 @@ website_url = 'http://elections.hawaii.gov/files/media.txt'
 
 fake_data_file = "./data/fake_summary.txt"
 
+last_lastModified = None
 # Function to check for updates on the website
 def check_for_updates():
     global summary_url, username, password
+    global last_lastModified
 
     summary_url = os.getenv("SUMMARY_URL")
     username = os.getenv("HI_USERNAME")
     password = os.getenv("HI_PASSWORD")
 
-    logger.debug(f"Checking for updates: {summary_url}, u: {username} p:{password}")
+    logger.debug(f" \n\tChecking for updates: {summary_url}, u: {username} p:{password}")
 
     response = requests.head(summary_url, auth=HTTPBasicAuth(username, password))
     if response.status_code == 200:
-        return response.headers['Last-Modified']
+        cur_lastModified = response.headers['Last-Modified']
+
+        if last_lastModified == cur_lastModified:
+            logger.debug(f" NO CHANGE: last LastMod {last_lastModified} same as cur {cur_lastModified}")
+            print(f" NO CHANGE: last LastMod {last_lastModified} same as cur {cur_lastModified}")
+            return last_lastModified
+        logger.debug(f" ** CHANGED: last LastMod {last_lastModified} same as cur {cur_lastModified}")
+        print(f" ** CHANGED: last LastMod {last_lastModified} same as cur {cur_lastModified}")
+        last_lastModified = cur_lastModified
+        return cur_lastModified
     else:
         logger.debug(f"Request response is:{response.status_code}")
     return None
@@ -65,7 +77,7 @@ def detect_encoding(file_path):
         return encoding, confidence
 
 
-def convert_to_utf8(input_file_path, temp_file_path, encoding):
+def convert_to_ascii(input_file_path, temp_file_path, encoding):
     """Convert a file to UTF-8 encoding."""
     try:
         with open(input_file_path, 'r', encoding=encoding) as f:
@@ -137,17 +149,19 @@ def strip_file(filepath):
         return str(e), None
 
 
-
+last_used_file = None
 def check_download_summary(local_folder):
+    global last_used_file
 
     if not hasattr(check_download_summary, "last_modified_time"):
         check_download_summary.last_modified_time = 'None'  # Initialize the static variable
+        logger.debug(f"first time using check_download")
         # load_config_env()
 
     current_modified_time = check_for_updates()
 
     retPath = None
-    logger.debug(f"current mod time {current_modified_time} last mod time{check_download_summary.last_modified_time}")
+    logger.debug(f"Check Download \n\tcurrent mod time {current_modified_time} \n\tlast mod time{check_download_summary.last_modified_time}")
     if current_modified_time and current_modified_time != check_download_summary.last_modified_time:
         logger.info("New update found. Downloading CSV...")
         local_summary_path = download_summary(local_folder)
@@ -165,7 +179,31 @@ def check_download_summary(local_folder):
                 retPath = newPath
             else:
                 logger.info("no need to strip lines use " + origPath)
+
+            if last_used_file is None:
+                last_used_file = retPath
+            elif retPath == last_used_file:
+                #no difference, set to None
+                print("retpath == last_used_file")
+                retPath = None
+            else:
+                # test if the contents are different
+                with open(retPath,'r') as newFile, open(last_used_file,'r') as lastFile:
+                    newLines = newFile.readlines()
+                    lastLines = lastFile.readlines()
+                    unified = difflib.unified_diff(newLines,lastLines, fromfile=retPath, tofile=last_used_file)
+                    diffences = list(unified)
+                    print(diffences)
+                    if len(diffences) == 0:
+                        logger.debug(f"new file and last file compare as NO DIFFERENCE")
+                        print(f"   NO DIFFERENCE in new and last file")
+                        retPath = None
+                    else:
+                        print("    New File is different!")
+
+
             check_download_summary.last_modified_time = current_modified_time
+            last_used_file = retPath
     else:
         logger.info("no update on web " + summary_url)
     return retPath

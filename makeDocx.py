@@ -69,8 +69,6 @@ def generate_opendoc(contests, candidates, file_path):
     doc = Document()
 
     # header on every page
-    header = doc.sections[0].header
-    header.add_paragraph(f'Hawaii State Primary Election Results {timestamp}')
 
     #estimate contest heights to insert page breaks
     # Set page layout (optional, if you need to switch to landscape mode)
@@ -80,6 +78,9 @@ def generate_opendoc(contests, candidates, file_path):
     section = doc.sections[-1]
     section.page_width = Inches(8.5)
     section.page_height = Inches(11)
+
+    header = doc.sections[0].header
+    header.add_paragraph(f'Hawaii State Primary Election Results {timestamp}')
 
     current_height = 0
     page_height_limit = 200  # wild estimate
