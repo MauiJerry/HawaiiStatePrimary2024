@@ -77,6 +77,8 @@ def write_datalink(contests, candidates, datalink_filepath):
                 logging.debug(f"contest {contest_id} blank {contest.blank} over {contest.over}")
                 writer.writerow([f"{contest.datalink_id}-blankover-COUNT", contest.bad_boi,
                                  f"{contest.datalink_id}-blankover-PCT", f"{contest.percent_bad_boi}%"])
+                if contest.contest_type == 'MS':
+                    writer.writerow([f"{contest.datalink_id}-q", contest.question])
 
                 for candidate in candidates.values():
                     if candidate.contest_id == contest_id:

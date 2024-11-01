@@ -24,6 +24,14 @@ def load_config_env():
     else:
         actually_print = False
 
+    oneShot = os.getenv("ONE_SHOT")
+    if oneShot == "TRUE":
+        oneShot = True
+        logger.debug("load_config: ****RUNNING ONE SHOT****")
+    else:
+        oneShot = False
+        logger.debug("load_config: ****RUNNING Forever****")
+
     summary_url = os.getenv("SUMMARY_URL")
     username = os.getenv("HI_USERNAME")
     password = os.getenv("HI_PASSWORD")

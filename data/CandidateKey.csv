@@ -1,50 +1,80 @@
-"#Contest ID","Candidate ID","Candidate Name","DataLinkID","DataLinkValue","Contest Title","Contest Party","Mail Votes","In-Person Votes","Total Votes","Percent Votes"
-"337",1,"POHLMAN, Emma Jane Avila","USSenate01-GREEN-candidate-01","use name","U.S. Senator","G",14,10,24,
-"192",1,"LAM, Adriel C.","USSenate01-REPUB-candidate-01","use name","U.S. Senator","R",42,10,52,
-"192",2,"MCDERMOTT, Bob","USSenate01-REPUB-candidate-02","use name","U.S. Senator","R",14,3,17,
-"192",5,"AMARAL, Melba","USSenate01-REPUB-candidate-03","use name","U.S. Senator","R",11,5,16,
-"192",4,"DOLAN, Paul","USSenate01-REPUB-candidate-04","use name","U.S. Senator","R",1,3,4,
-"192",3,"REYES, Arturo P.","USSenate01-REPUB-candidate-05","use name","U.S. Senator","R",1,3,4,
-"192",6,"TIPON, Emmanuel","USSenate01-REPUB-candidate-06","use name","U.S. Senator","R",1,0,1,
-"267",2,"HIRONO, Mazie K.","USSenate01-DEM-candidate-01","use name","U.S. Senator","D",16,9,25,
-"267",3,"CURTIS, Ron","USSenate01-DEM-candidate-02","use name","U.S. Senator","D",17,6,23,
-"267",1,"LEWMAN, Clyde McClain (Mac)","USSenate01-DEM-candidate-03","use name","U.S. Senator","D",2,2,4,
-"335",1,"GIUFFRE, John (Raghu)","USSenate01-NONP-candidate-01","use name","U.S. Senator","N",8,9,17,
-"339",1,"BILLIONAIRE, Shelby Pikachu","USSenate01-WE-candidate-01","use name","U.S. Senator","W",9,8,17,
-"104",1,"LARGEY, Patrick C.","USHouse01-REPUB-candidate-01","use name","U.S. Representative, Dist I","R",46,3,49,
-"266",2,"CASE, Ed","USHouse01-DEM-candidate-01","use name","U.S. Representative, Dist I","D",5,3,8,
-"266",1,"HALE, Cecil R.","USHouse01-DEM-candidate-02","use name","U.S. Representative, Dist I","D",6,1,7,
-"338",1,"GRIFFIN, Calvin","USHouse01-NONP-candidate-01","use name","U.S. Representative, Dist I","N",5,5,10,
-"269",1,"BOND, Steve","USHouse02-REPUB-candidate-01","use name","U.S. Representative, Dist II","R",21,14,35,
-"70",1,"TOKUDA, Jill N.","USHouse02-DEM-candidate-01","use name","U.S. Representative, Dist II","D",18,12,30,
-"336",1,"MEYER, Randall Kelly","USHouse02-NONP-candidate-01","use name","U.S. Representative, Dist II","N",2,4,6,
-"341",1,"TOMAN, Aaron","USHouse02-LIBER-candidate-01","use name","U.S. Representative, Dist II","L",6,5,11,
-"156",2,"SAVAGE, Jeremiah","StateHouse10-DEM-candidate-01","use name","State Representative, Dist 10","D",4,0,4,
-"156",1,"MIYAKE, Tyson K.","StateHouse10-DEM-candidate-02","use name","State Representative, Dist 10","D",0,0,0,
-"330",1,"ADAM, Scott","StateHouse13-REPUB-candidate-01","use name","State Representative, Dist 13","R",1,0,1,
-"151",2,"POEPOE, Mahina","StateHouse13-DEM-candidate-01","use name","State Representative, Dist 13","D",3,0,3,
-"151",3,"CLARK, Linda Ha'i","StateHouse13-DEM-candidate-02","use name","State Representative, Dist 13","D",0,0,0,
-"290",1,"ARMSTRONG, Kelly J.","StateHouse14-REPUB-candidate-01","use name","State Representative, Dist 14","R",0,6,6,
-"32",1,"COCHRAN, Elle","StateHouse14-DEM-candidate-01","use name","State Representative, Dist 14","D",0,3,3,
-"32",2,"BALINBIN, Kanamu","StateHouse14-DEM-candidate-02","use name","State Representative, Dist 14","D",0,0,0,
-"263",3,"AKI, Z. Ka'apana","OHA-HAWAII-candidate-01","use name","Hawaii Resident Trustee","NON",77,19,96,
-"263",4,"KAHELE, Kaiali'i","OHA-HAWAII-candidate-02","use name","Hawaii Resident Trustee","NON",38,15,53,
-"263",2,"CERMELJ, Hope Alohalani","OHA-HAWAII-candidate-03","use name","Hawaii Resident Trustee","NON",13,21,34,
-"263",1,"WALTJEN-KUILIPULE, Hulali","OHA-HAWAII-candidate-04","use name","Hawaii Resident Trustee","NON",12,15,27,
-"264",3,"ALAPA, Luana","OHA-MOLOKAI-candidate-01","use name","Molokai Resident Trustee","NON",56,17,73,
-"264",1,"LANKFORD-FABORITO, Lu Ann","OHA-MOLOKAI-candidate-02","use name","Molokai Resident Trustee","NON",56,14,70,
-"264",4,"HALINIAK, Gayla","OHA-MOLOKAI-candidate-03","use name","Molokai Resident Trustee","NON",15,22,37,
-"264",2,"NIHIPALI, R. Kunani","OHA-MOLOKAI-candidate-04","use name","Molokai Resident Trustee","NON",13,16,29,
-"115",5,"AHU ISA, Lei","OHA-ATLARGE-candidate-01","use name","At-Large Trustee","NON",50,12,62,
-"115",6,"LEE, Brendon Kalei'aina","OHA-ATLARGE-candidate-02","use name","At-Large Trustee","NON",49,9,58,
-"115",2,"AKINA, Keli'i","OHA-ATLARGE-candidate-03","use name","At-Large Trustee","NON",19,12,31,
-"115",1,"APO, Peter","OHA-ATLARGE-candidate-04","use name","At-Large Trustee","NON",14,13,27,
-"115",3,"KAHANAMOKU-TERUYA, Patty","OHA-ATLARGE-candidate-05","use name","At-Large Trustee","NON",8,10,18,
-"115",7,"KALIMA, Leona M.","OHA-ATLARGE-candidate-06","use name","At-Large Trustee","NON",8,9,17,
-"115",4,"KAWAAUHAU, Larry","OHA-ATLARGE-candidate-07","use name","At-Large Trustee","NON",4,4,8,
-"130",1,"COOK, Tom","Council-SOUTHMAUI-candidate-01","use name","Councilmember (South Maui)","NON",9,15,24,
-"130",2,"KING, Kelly Takaya","Council-SOUTHMAUI-candidate-02","use name","Councilmember (South Maui)","NON",9,13,22,
-"130",3,"PRONES, Johnny Keoni","Council-SOUTHMAUI-candidate-03","use name","Councilmember (South Maui)","NON",0,8,8,
-"132",4,"CRUZ, Jocelyn N.","Council-UPCOUNTRY-candidate-01","use name","Councilmember (Upcountry)","NON",10,14,24,
-"132",1,"SUGIMURA, Yuki Lei Kashiwa","Council-UPCOUNTRY-candidate-02","use name","Councilmember (Upcountry)","NON",8,10,18,
-"132",3,"CODELIA, Edward (Ed)","Council-UPCOUNTRY-candidate-03","use name","Councilmember (Upcountry)","NON",2,12,14,
+#Contest ID,Contest Title,Contest Seq Nbr,Candidate ID,Candidate Name,Candidate Seq Nbr,DataLinkID,DataLinkValue
+283,President and Vice President,1,7,"(SL) DE LA CRUZ, Claudia 
+For PRESIDENT
+GARCIA, Karina 
+For VICE PRESIDENT",1,PresidentHI-candidate01,use name
+283,President and Vice President,1,1,"(D) HARRIS, Kamala D. 
+For PRESIDENT
+WALZ, Tim 
+For VICE PRESIDENT",2,PresidentHI-candidate02,use name
+283,President and Vice President,1,5,"(L) OLIVER, Chase 
+For PRESIDENT
+TER MAAT, Mike 
+For VICE PRESIDENT",3,PresidentHI-candidate03,use name
+283,President and Vice President,1,6,"(S) SONSKI, Peter 
+For PRESIDENT
+ONAK, Lauren
+For VICE PRESIDENT",4,PresidentHI-candidate04,use name
+283,President and Vice President,1,3,"(G) STEIN, Jill 
+For PRESIDENT
+WARE, Rudolph
+For VICE PRESIDENT",5,PresidentHI-candidate05,use name
+283,President and Vice President,1,2,"(R) TRUMP, Donald J. 
+For PRESIDENT
+VANCE, JD 
+For VICE PRESIDENT",6,PresidentHI-candidate06,use name
+100,U.S. Senator,2,3,"(W) BILLIONAIRE, Shelby Pikachu",1,USSenate01-candidate01,use name
+100,U.S. Senator,2,2,"(D) HIRONO, Mazie K.",2,USSenate01-candidate02,use name
+100,U.S. Senator,2,4,"(R) MCDERMOTT, Bob",3,USSenate01-candidate03,use name
+100,U.S. Senator,2,1,"(G) POHLMAN, Emma Jane Avila",4,USSenate01-candidate04,use name
+3,"U.S. Representative, Dist I",3,1,"(D) CASE, Ed",1,USRep01-candidate01,use name
+3,"U.S. Representative, Dist I",3,2,"(R) LARGEY, Patrick C.",2,USRep01-candidate02,use name
+70,"U.S. Representative, Dist II",4,3,"(R) BOND, Steve",1,USRep02-candidate01,use name
+70,"U.S. Representative, Dist II",4,4,"(N) MEYER, Randall Kelly",2,USRep02-candidate02,use name
+70,"U.S. Representative, Dist II",4,2,"(D) TOKUDA, Jill N.",3,USRep02-candidate03,use name
+70,"U.S. Representative, Dist II",4,1,"(L) TOMAN, Aaron",4,USRep02-candidate04,use name
+10,"State Senator, Dist 6",6,1,"(D) MCKELVEY, Angus L.K.",1,HISenate06-candidate01,use name
+10,"State Senator, Dist 6",6,2,"(R) WALKER, Sheila",2,HISenate06-candidate02,use name
+213,"State Senator, Dist 7",7,1,"(D) DECOITE, Lynn Pualani",1,HISenate07-candidate01,use name
+213,"State Senator, Dist 7",7,2,"(R) MACARAEG, Gabby",2,HISenate07-candidate02,use name
+159,"State Representative, Dist 11",19,1,"(R) ACAIN, Aileen R. (Lily)",1,HIRep11-candidate01,use name
+159,"State Representative, Dist 11",19,2,"(D) AMATO, Terez (T.Amato)",2,HIRep11-candidate02,use name
+77,"State Representative, Dist 12",20,1,"(R) JOHNSON, Dan",1,HIRep12-candidate01,use name
+77,"State Representative, Dist 12",20,2,"(G) RYAN, Rita M.",2,HIRep12-candidate02,use name
+77,"State Representative, Dist 12",20,3,"(D) YAMASHITA, Kyle T.",3,HIRep12-candidate03,use name
+79,"State Representative, Dist 13",21,2,"(R) ADAM, Scott",1,HIRep13-candidate01,use name
+79,"State Representative, Dist 13",21,1,"(D) POEPOE, Mahina",2,HIRep13-candidate02,use name
+187,"State Representative, Dist 14",22,2,"(R) ARMSTRONG, Kelly J.",1,HIRep14-candidate01,use name
+187,"State Representative, Dist 14",22,1,"(D) COCHRAN, Elle",2,HIRep14-candidate02,use name
+286,Molokai Resident Trustee,48,1,"ALAPA, Luana",1,OHA-Molokai-candidate01,use name
+286,Molokai Resident Trustee,48,2,"NIHIPALI, R. Kunani",2,OHA-Molokai-candidate02,use name
+292,Kauai Resident Trustee,49,1,"AHUNA, Dan",1,OHA-Kauai-candidate01,use name
+292,Kauai Resident Trustee,49,2,"LINDSEY, Laura A.",2,OHA-Kauai-candidate02,use name
+115,At-Large Trustee,50,2,"AHU ISA, Lei",1,OHA-AtLarge-candidate01,use name
+115,At-Large Trustee,50,1,"AKINA, Keli'i",2,OHA-AtLarge-candidate02,use name
+263,Councilmember (East Maui),54,1,"SINENCI, Shane",1,Council-EM-candidate01,use name
+254,Councilmember (West Maui),55,1,"ACQUINTAS, Lorien (Lolo)",1,Council-WM-candidate01,use name
+254,Councilmember (West Maui),55,2,"PALTIN, Tamara Akiko Maile",2,Council-WM-candidate02,use name
+253,Councilmember (Wailuku-Waihee-Waikapu),56,1,"FORREST, James (Nahele)",1,Council-WWW-candidate01,use name
+253,Councilmember (Wailuku-Waihee-Waikapu),56,2,"LEE, Alice L.",2,Council-WWW-candidate02,use name
+129,Councilmember (Kahului),57,2,"KAMA, Tasha",1,Council-KAH-candidate01,use name
+129,Councilmember (Kahului),57,1,"KAMEKONA, Carol Lee",2,Council-KAH-candidate02,use name
+130,Councilmember (South Maui),58,2,"COOK, Tom",1,Council-SM-candidate01,use name
+130,Councilmember (South Maui),58,1,"KING, Kelly Takaya",2,Council-SM-candidate02,use name
+131,Councilmember (Makawao-Haiku-Paia),59,2,"BOONE, Nara",1,Council-MHP-candidate01,use name
+131,Councilmember (Makawao-Haiku-Paia),59,1,"UU-HODGINS, Nohe",2,Council-MHP-candidate02,use name
+132,Councilmember (Upcountry),60,2,"CRUZ, Jocelyn N.",1,Council-UP-candidate01,use name
+132,Councilmember (Upcountry),60,1,"SUGIMURA, Yuki Lei Kashiwa",2,Council-UP-candidate02,use name
+258,Councilmember (Lanai),61,1,"JOHNSON, Gabe",1,Council-LAN-candidate01,use name
+282,Councilmember (Molokai),62,2,"PELE, John",1,Council-MOL-candidate01,use name
+282,Councilmember (Molokai),62,1,"RAWLINS-FERNANDEZ, Keani",2,Council-MOL-candidate02,use name
+297,Question #1,64,2,YES,1,HIamend01-a1,use name
+297,Question #1,64,1,NO,2,HIamend01-a2,use name
+296,Question #2,65,2,YES,1,HIamend02-a1,use name
+296,Question #2,65,1,NO,2,HIamend02-a2,use name
+312,Maui: Salary Commission,69,2,YES,1,MAUIamend01-a1,use name
+312,Maui: Salary Commission,69,1,NO,2,MAUIamend01-a2,use name
+308,Maui: Independent Staffing for Board of Ethics,70,1,YES,1,MAUIamend02-a1,use name
+308,Maui: Independent Staffing for Board of Ethics,70,2,NO,2,MAUIamend02-a2,use name
+298,Maui: Board and Commission Terms,71,1,YES,1,MAUIamend03-a1,use name
+298,Maui: Board and Commission Terms,71,2,NO,2,MAUIamend03-a2,use name

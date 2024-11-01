@@ -14,8 +14,10 @@ import win32api
 
 from load_config import load_config_env
 
+# some globals that may be updated/changed after loading environment file
 check_state_interval = 60 * 1 # 60sec * N minutes
 doDownload = True
+oneShot = True
 
 # Configure local logger
 logger = logging.getLogger(__name__)
@@ -29,10 +31,9 @@ output_folder = "./output"
 
 contest_file_name = "ContestKey.csv"
 candidate_file_name = "CandidateKey.csv"
-results_file_name = "results.csv"
 datalink_file_name = "datalink.csv"
 state_summary_file_name = "summary.csv"
-docx_base_name = "primary_results"
+docx_base_name = "general_results"
 
 
 def print_file(file_path):
@@ -85,10 +86,20 @@ def copy_summary_to_data(input_filepath):
 
 
 def runHIStatePrimary():
-    global contest_file_path, candidate_file_path, results_file_path, datalink_file_path
+    global contest_file_path, candidate_file_path, datalink_file_path, oneShot, doDownload
     global state_summary_file_path
 
     load_config_env()
+    # now transfer data from config/os.env to global variables
+
+    oneShot = os.getenv("ONE_SHOT")
+    if oneShot == "FALSE":
+        oneShot = True
+        print("****RUNNING ONE SHOT****")
+    else:
+        oneShot = False
+        print("****RUNNING Forever****")
+
 
     check_state_interval = 60 * int(os.getenv("SLEEP_MINUTES"))
     logger.info(f"Sleep seconds {check_state_interval}")
@@ -104,7 +115,6 @@ def runHIStatePrimary():
     # Construct the file paths
     contest_file_path = os.path.join(data_folder, contest_file_name)
     candidate_file_path = os.path.join(data_folder, candidate_file_name)
-    results_file_path = os.path.join(data_folder, results_file_name)
     datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
     state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
     # Load candidates and contests
@@ -167,13 +177,18 @@ def runHIStatePrimary():
         # Sleep for a while before checking again
         if not doDownload:
             break  # no need to repeat
+        if oneShot:
+            print("runHIStatePrimary One_Shot set in config.env, so only run once")
+            break
+        else:
+            print("oneShot is False, so sleep", oneShot)
         print(f"Sleep for {check_state_interval} seconds ... {check_state_interval/60} minutes")
         time.sleep(check_state_interval)  # Check for updates every N seconds
     print("Finished while Loop")
 
 
 def main():
-    global contest_file_path, candidate_file_path, results_file_path, datalink_file_path
+    global contest_file_path, candidate_file_path,  datalink_file_path
     global state_summary_file_path
 
     load_config_env()
@@ -189,7 +204,6 @@ def main():
     # Construct the file paths
     contest_file_path = os.path.join(data_folder, contest_file_name)
     candidate_file_path = os.path.join(data_folder, candidate_file_name)
-    results_file_path = os.path.join(data_folder, results_file_name)
     datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
     state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
 
@@ -206,6 +220,9 @@ if __name__ == "__main__":
         while True:
             main()
             print("Running 2024 HI State Primary Results Tool... Press Ctrl+C to stop.")
+            if oneShot:
+                print("One_Shot set in config.env, so only run once")
+                break
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt caught. Cleaning up and exiting...")
         # Perform any cleanup here

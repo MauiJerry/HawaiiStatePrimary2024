@@ -12,7 +12,7 @@ def reformat_name(name):
 
     # Remove leading/trailing whitespaces from parts
     last_name = parts[0].strip()
-    first_middle_name = parts[1].strip()
+    first_middle_name = "".join(parts[1:]).strip() # allow for no first name (YES/NO for measures)
 
     # Combine the names in the desired format
     formatted_name = f"{first_middle_name} {last_name}"
@@ -50,6 +50,7 @@ class Candidate:
         candidates = {}
         with open(file_path, mode='r') as file:
             reader = csv.DictReader(file)
+            logger.info(f" candidates reader opened columns: {reader.fieldnames}")
             for row in reader:
                 candidate = cls(
                     contest_id=str(row['#Contest ID']),
@@ -58,7 +59,7 @@ class Candidate:
                     datalink_id=row['DataLinkID'],
                     datalink_value=row['DataLinkValue'],
                     contest_title=row['Contest Title'],
-                    contest_party=row['Contest Party'],
+                    contest_party=row.get('Contest Party',''),
                     mail_votes=row.get('Mail Votes', 0),
                     in_person_votes=row.get('In-Person Votes', 0),
                     total_votes=row.get('Total Votes', 0),
