@@ -1,28 +1,28 @@
-#Contest ID,Contest Title,Contest Type,Contest Seq Nbr,numCandidates,DataLinkID,DatalinkValue,Question
-283,President and Vice President,OF,1,6,PresidentHI,US President and VP (HI only),
-100,U.S. Senator,OF,2,4,USSenate01,US Senate,
-3,"U.S. Representative, Dist I",OF,3,2,USRep01,US Representative District 1,
-70,"U.S. Representative, Dist II",OF,4,4,USRep02,US Representative District 2,
-10,"State Senator, Dist 6",OF,6,2,HISeante06,State Senator District 6,
-213,"State Senator, Dist 7",OF,7,2,HISeante07,State Senator District 7,
-159,"State Representative, Dist 11",OF,19,2,HIRep11,State Representative District 11,
-77,"State Representative, Dist 12",OF,20,3,HIRep12,State Representative District 12,
-79,"State Representative, Dist 13",OF,21,1,HIRep13,State Representative District 13,
-187,"State Representative, Dist 14",OF,22,1,HIRep14,State Representative District 14,
-286,Molokai Resident Trustee,OF,48,2,OHA-Molokai,OHA Molokai Trustee,
-292,Kauai Resident Trustee,OF,49,2,OHA-Kauai,OHA Kauai Trustee,
-115,At-Large Trustee,OF,50,2,OHA-AtLarge,OHA At-Large Trustee,
-263,Councilmember (East Maui),OF,54,1,Council-EM,Maui County Council - East Maui,
-254,Councilmember (West Maui),OF,55,2,Council-WM,Maui County Council - West Maui,
-253,Councilmember (Wailuku-Waihee-Waikapu),OF,56,2,Council-WWW,Maui County Council - Wailuku Waihee Waikapu,
-129,Councilmember (Kahului),OF,57,2,Council-KAH,Maui County Council - Kahului,
-130,Councilmember (South Maui),OF,58,2,Council-SM,Maui County Council - South Maui,
-131,Councilmember (Makawao-Haiku-Paia),OF,59,2,Council-MHP,Maui County Council - Makawao Haiku Paia,
-132,Councilmember (Upcountry),OF,60,2,Council-UP,Maui County Council - Upcountry,
-258,Councilmember (Lanai),OF,61,1,Council-LAN,Maui County Council - Lanai,
-282,Councilmember (Molokai),OF,62,2,Council-MOL,Maui County Council - Molokai,
-297,Question #1,MS,64,2,HIamend01,Hawaii State Constitution Amendment 1,Shall the state constitution be amended to repeal the legislature's authority to reserve marriage to opposite-sex couples?
-296,Question #2,MS,65,2,HIamend02,Hawaii State Constitution Amendment 2,Shall the Constitution of the State of Hawaii be amended to make the appointment and confirmation process for district court judges the same as the appointment and confirmation process for supreme court justices and intermediate court of appeals and circuit court judges?
-312,Maui: Salary Commission,MS,69,2,MAUIamend01,Maui County Charter Amendment 1 ,"Shall the Charter be amended to require the Salary Commission to determine ""salaries"" instead of ""compensation"" for elected officials and appointed directors and deputy directors to maintain consistency with the Constitution of the State of Hawaii and remove fiscal barriers to create equity through benefits such as reimbursement of travel costs?"
-308,Maui: Independent Staffing for Board of Ethics,MS,70,2,MAUIamend02,Maui County Charter Amendment 2,"Shall the Charter be amended, effective July 1, 2025, to authorize the Board of Ethics of the County of Maui to hire independent staff?"
-298,Maui: Board and Commission Terms,MS,71,2,MAUIamend03,Maui County Charter Amendment 3 ,"Shall the Charter be amended, effective July 1, 2025, to minimize the risk of vacancies on boards and commissions generally, and specifically with regard to dedicated seats for members residing in less populous areas, by allowing the appointment of members of boards and commissions for two consecutive full terms or ten consecutive years, whichever is greater?"
+"#Contest ID","Contest Title","Contest Type","Contest Seq Nbr","numCandidates","DataLinkID","DatalinkValue",,"  "
+283,"President and Vice President","OF",1,6,"PresidentHI","US President and VP (HI only)",,"  "
+100,"U.S. Senator","OF",2,4,"USSenate01","US Senate",,"  "
+3,"U.S. Representative, Dist I","OF",3,2,"USRep01","US Representative District 1",,"  "
+70,"U.S. Representative, Dist II","OF",4,4,"USRep02","US Representative District 2",,"  "
+10,"State Senator, Dist 6","OF",6,2,"HISenate06","State Senator District 6",,"  "
+213,"State Senator, Dist 7","OF",7,2,"HISenate07","State Senator District 7",,"  "
+159,"State Representative, Dist 11","OF",19,2,"HIRep11","State Representative District 11",,"  "
+77,"State Representative, Dist 12","OF",20,3,"HIRep12","State Representative District 12",,"  "
+79,"State Representative, Dist 13","OF",21,1,"HIRep13","State Representative District 13",,"  "
+187,"State Representative, Dist 14","OF",22,1,"HIRep14","State Representative District 14",,"  "
+286,"Molokai Resident Trustee","OF",48,2,"OHA-Molokai","OHA Molokai Trustee",,"  "
+292,"Kauai Resident Trustee","OF",49,2,"OHA-Kauai","OHA Kauai Trustee",,"  "
+115,"At-Large Trustee","OF",50,2,"OHA-AtLarge","OHA At-Large Trustee",,"  "
+263,"Councilmember (East Maui)","OF",54,1,"Council-EM","Maui County Council - East Maui",,"  "
+254,"Councilmember (West Maui)","OF",55,2,"Council-WM","Maui County Council - West Maui",,"  "
+253,"Councilmember (Wailuku-Waihee-Waikapu)","OF",56,2,"Council-WWW","Maui County Council - Wailuku Waihee Waikapu",,"  "
+129,"Councilmember (Kahului)","OF",57,2,"Council-KAH","Maui County Council - Kahului",,"  "
+130,"Councilmember (South Maui)","OF",58,2,"Council-SM","Maui County Council - South Maui",,"  "
+131,"Councilmember (Makawao-Haiku-Paia)","OF",59,2,"Council-MHP","Maui County Council - Makawao Haiku Paia",,"  "
+132,"Councilmember (Upcountry)","OF",60,2,"Council-UP","Maui County Council - Upcountry",,"  "
+258,"Councilmember (Lanai)","OF",61,1,"Council-LAN","Maui County Council - Lanai",,"  "
+282,"Councilmember (Molokai)","OF",62,2,"Council-MOL","Maui County Council - Molokai",,"  "
+297,"Question #1","MS",64,2,"HIamend01","Hawaii State Constitution Amendment 1",,"  "
+296,"Question #2","MS",65,2,"HIamend02","Hawaii State Constitution Amendment 2",,"  "
+312,"Maui: Salary Commission","MS",69,2,"MAUIamend01","Maui County Charter Amendment 1 ",,"  "
+308,"Maui: Independent Staffing for Board of Ethics","MS",70,2,"MAUIamend02","Maui County Charter Amendment 2",,"  "
+298,"Maui: Board and Commission Terms","MS",71,2,"MAUIamend03","Maui County Charter Amendment 3 ",,"  "

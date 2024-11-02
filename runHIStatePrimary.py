@@ -3,6 +3,7 @@ import time
 import logging
 from candidates import Candidate, list_candidates
 from contests import Contest, list_contests
+from federal import FederalContests
 from results import load_results, finalize_results
 from datalink import write_datalink, copy_to_tricaster, copy_to_sharedFolder
 from retrieveStateSummary import check_download_summary, fake_data_file
@@ -29,6 +30,7 @@ download_folder = "./download"
 datalink_folder = "./datalink"
 output_folder = "./output"
 
+federal_file_name = "FederalContests.csv"
 contest_file_name = "ContestKey.csv"
 candidate_file_name = "CandidateKey.csv"
 datalink_file_name = "datalink.csv"
@@ -87,6 +89,7 @@ def copy_summary_to_data(input_filepath):
 
 def runHIStatePrimary():
     global contest_file_path, candidate_file_path, datalink_file_path, oneShot, doDownload
+    global federal_file_path
     global state_summary_file_path
 
     load_config_env()
@@ -117,6 +120,8 @@ def runHIStatePrimary():
     candidate_file_path = os.path.join(data_folder, candidate_file_name)
     datalink_file_path = os.path.join(datalink_folder, datalink_file_name)
     state_summary_file_path = os.path.join(data_folder, state_summary_file_name)
+    federal_file_path = os.path.join(data_folder,federal_file_name)
+
     # Load candidates and contests
 
     candidates = Candidate.from_csv(candidate_file_path)
@@ -155,8 +160,11 @@ def runHIStatePrimary():
             load_results(state_summary_file_path, candidates, contests)
             finalize_results(contests, candidates)
 
+            federal_contests = FederalContests.from_csv(federal_file_path)
+            logger.info(f"Federal Results (upon return): {federal_contests.data}")
+
             # Export the processed data
-            write_datalink(contests, candidates, datalink_file_path)
+            write_datalink(contests, candidates, federal_contests, datalink_file_path)
 
             copy_data_link_name = os.path.join(output_folder, f'{datalink_file_name}_{timestamp}.csv')
             shutil.copy(datalink_file_path, copy_data_link_name)
@@ -177,9 +185,10 @@ def runHIStatePrimary():
         # Sleep for a while before checking again
         if not doDownload:
             break  # no need to repeat
-        if oneShot:
+        if True: # oneShot:
+            # currently force oneshot, not sure why env doesnt stop it
             print("runHIStatePrimary One_Shot set in config.env, so only run once")
-            break
+            return
         else:
             print("oneShot is False, so sleep", oneShot)
         print(f"Sleep for {check_state_interval} seconds ... {check_state_interval/60} minutes")
@@ -188,7 +197,7 @@ def runHIStatePrimary():
 
 
 def main():
-    global contest_file_path, candidate_file_path,  datalink_file_path
+    global contest_file_path, candidate_file_path,  datalink_file_path, federal_file_path
     global state_summary_file_path
 
     load_config_env()
@@ -220,8 +229,9 @@ if __name__ == "__main__":
         while True:
             main()
             print("Running 2024 HI State Primary Results Tool... Press Ctrl+C to stop.")
-            if oneShot:
-                print("One_Shot set in config.env, so only run once")
+            if oneShot or not oneShot:
+                # currently force oneshot, not sure why env doesnt stop it
+                print("Force One_Shot ") #set in config.env, so only run once")
                 break
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt caught. Cleaning up and exiting...")

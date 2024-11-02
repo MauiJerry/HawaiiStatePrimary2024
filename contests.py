@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 class Contest:
     def __init__(self, contest_id, contest_seq_nbr, contest_title, contest_type, contest_party,
-                 num_candidates, datalink_id, datalink_value,question,
+                 num_candidates, datalink_id, datalink_value,
                  total_votes=0, blank=0, over=0, invalid=0):
         self.contest_id = contest_id
         self.contest_seq_nbr = contest_seq_nbr
@@ -17,7 +17,6 @@ class Contest:
         self.num_candidates = num_candidates
         self.datalink_id = datalink_id
         self.datalink_value = datalink_value
-        self.question = question
         self.total_votes = total_votes
         self.blank = blank
         self.over = over
@@ -34,26 +33,33 @@ class Contest:
     def from_csv(cls, file_path):
         contests = {}
         count =0
-        with open(file_path, mode='r') as file:
+        with (open(file_path, mode='r') as file):
             reader = csv.DictReader(file)
             logger.info(f" contest reader opened columns: {reader.fieldnames}")
 
             for row in reader:
                 #Slogger.info(f"read row: {row}")
+
                 contest = cls(
                     contest_id=str(row['#Contest ID']),
                     contest_seq_nbr=row['Contest Seq Nbr'],
                     contest_title=row['Contest Title'],
                     contest_type = row['Contest Type'],
                     contest_party=row.get('Contest Party',''),
-                    num_candidates=int(row['numCandidates']),
+                    num_candidates=row['numCandidates'],
                     datalink_id=row['DataLinkID'],
                     datalink_value=row['DatalinkValue'],
-                    question = row['Question']
                 )
+
                 if isinstance(contest.contest_id, int):
                     raise ValueError("Contest Id should be a string, not an int")
 
+                if isinstance(contest.num_candidates, str):
+                    #logger.info(f"Contests : id {contest.contest_id} numCand {contest.num_candidates}")
+                    try:
+                        contest.num_candidates = int(contest.num_candidates)
+                    except Exception as e:
+                        logger.error(f"except {e} contest_id {contest.contest_title}")
                 contests[contest.contest_id] = contest
                 #logger.debug(f"loaded contest: {contest}")
                 count += 1
@@ -74,4 +80,4 @@ def update_contest_from_row(contest, data):
 
 def list_contests(contests):
     print("Contests has ", len(contests), "contests")
-    logger.debug(f"Candidates loaded: {contests}")
+    logger.debug(f"Contests loaded: {contests}")

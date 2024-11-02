@@ -66,7 +66,7 @@ def copy_to_sharedFolder(source_file):
     print(f"Should have copied file {source_file} to {shortcutFolder}")
 
 
-def write_datalink(contests, candidates, datalink_filepath):
+def write_datalink(contests, candidates, federal_contests, datalink_filepath):
     try:
         print(f"Writing datalink to {datalink_filepath}")
         with open(datalink_filepath, 'w', newline='') as csvfile:
@@ -77,8 +77,6 @@ def write_datalink(contests, candidates, datalink_filepath):
                 logging.debug(f"contest {contest_id} blank {contest.blank} over {contest.over}")
                 writer.writerow([f"{contest.datalink_id}-blankover-COUNT", contest.bad_boi,
                                  f"{contest.datalink_id}-blankover-PCT", f"{contest.percent_bad_boi}%"])
-                if contest.contest_type == 'MS':
-                    writer.writerow([f"{contest.datalink_id}-q", contest.question])
 
                 for candidate in candidates.values():
                     if candidate.contest_id == contest_id:
@@ -91,7 +89,18 @@ def write_datalink(contests, candidates, datalink_filepath):
                             f"{candidate.percent_votes}%"
                         ]
                         writer.writerow(candidate_fields)
+
+            for key, value in federal_contests.data.items():
+                # Convert Python-friendly keys back to CSV format by replacing '_' with '-'
+                csv_key = key.replace('_', '-')
+                if key.endswith("PCT"):
+                    formatted_value = f"{value}%"
+                else:
+                    formatted_value = value
+                writer.writerow([csv_key, formatted_value])
+
         logger.info(f"DataLink file written to {datalink_filepath}")
+
     except Exception as e:
         logger.error(f"Error writing DataLink file: {e}")
         raise

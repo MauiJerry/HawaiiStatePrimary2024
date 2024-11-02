@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 #logger.setLevel(logging.DEBUG)
 
-def reformat_name(name):
+def reformat_name_old(name):
     # Split the name by comma
     parts = name.split(',')
 
@@ -18,6 +18,25 @@ def reformat_name(name):
     formatted_name = f"{first_middle_name} {last_name}"
 
     return formatted_name
+def reformat_name(name):
+    # Check if name starts with party info in parentheses
+    party_info = ""
+    if name.startswith("("):
+        party_end_index = name.find(")")
+        if party_end_index != -1:
+            party_info = name[:party_end_index + 1].strip()  # Extract party info
+            name = name[party_end_index + 1:].strip()  # Remove party info from name
+
+    # Split the remaining name by comma to get last name and first/middle names
+    parts = [part.strip() for part in name.split(',', 1)]  # Split into at most two parts
+    last_name = parts[0] if parts else ""
+    first_middle_name = parts[1] if len(parts) > 1 else ""
+
+    # Combine names in the desired format
+    formatted_name = f"{first_middle_name} {last_name} {party_info}".strip()
+
+    return formatted_name
+
 
 
 class Candidate:

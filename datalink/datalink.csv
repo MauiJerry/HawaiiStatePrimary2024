@@ -1,138 +1,142 @@
 PresidentHI,US President and VP (HI only)
-PresidentHI-blankover-COUNT,35,PresidentHI-blankover-PCT,6.8%
-PresidentHI-candidate01,"Claudia 
-For PRESIDENT
-GARCIA Karina 
-For VICE PRESIDENT (SL) DE LA CRUZ",PresidentHI-candidate01-VOTE,54,PresidentHI-candidate01-PCT,10.5%
-PresidentHI-candidate02,"Kamala D. 
-For PRESIDENT
-WALZ Tim 
-For VICE PRESIDENT (D) HARRIS",PresidentHI-candidate02-VOTE,159,PresidentHI-candidate02-PCT,30.9%
-PresidentHI-candidate03,"Chase 
-For PRESIDENT
-TER MAAT Mike 
-For VICE PRESIDENT (L) OLIVER",PresidentHI-candidate03-VOTE,37,PresidentHI-candidate03-PCT,7.2%
-PresidentHI-candidate04,"Peter 
-For PRESIDENT
-ONAK Lauren
-For VICE PRESIDENT (S) SONSKI",PresidentHI-candidate04-VOTE,41,PresidentHI-candidate04-PCT,8.0%
-PresidentHI-candidate05,"Jill 
-For PRESIDENT
-WARE Rudolph
-For VICE PRESIDENT (G) STEIN",PresidentHI-candidate05-VOTE,47,PresidentHI-candidate05-PCT,9.1%
-PresidentHI-candidate06,"Donald J. 
-For PRESIDENT
-VANCE JD 
-For VICE PRESIDENT (R) TRUMP",PresidentHI-candidate06-VOTE,141,PresidentHI-candidate06-PCT,27.4%
+PresidentHI-blankover-COUNT,0,PresidentHI-blankover-PCT,0%
+PresidentHI-candidate01,De LaCruze/Garcia (SL),PresidentHI-candidate01-VOTE,0,PresidentHI-candidate01-PCT,0%
+PresidentHI-candidate02,Harris/Walz (D),PresidentHI-candidate02-VOTE,0,PresidentHI-candidate02-PCT,0%
+PresidentHI-candidate03,Oliver/TerMatt (L),PresidentHI-candidate03-VOTE,0,PresidentHI-candidate03-PCT,0%
+PresidentHI-candidate04,Sonski/Onak (G),PresidentHI-candidate04-VOTE,0,PresidentHI-candidate04-PCT,0%
+PresidentHI-candidate05,Stein/Ware (G),PresidentHI-candidate05-VOTE,0,PresidentHI-candidate05-PCT,0%
+PresidentHI-candidate06,Trump/Vance (NeoN),PresidentHI-candidate06-VOTE,0,PresidentHI-candidate06-PCT,0%
 USSenate01,US Senate
-USSenate01-blankover-COUNT,41,USSenate01-blankover-PCT,8.4%
-USSenate01-candidate01,Shelby Pikachu (W) BILLIONAIRE,USSenate01-candidate01-VOTE,68,USSenate01-candidate01-PCT,13.9%
-USSenate01-candidate02,Mazie K. (D) HIRONO,USSenate01-candidate02-VOTE,180,USSenate01-candidate02-PCT,36.8%
-USSenate01-candidate03,Bob (R) MCDERMOTT,USSenate01-candidate03-VOTE,137,USSenate01-candidate03-PCT,28.0%
-USSenate01-candidate04,Emma Jane Avila (G) POHLMAN,USSenate01-candidate04-VOTE,63,USSenate01-candidate04-PCT,12.9%
+USSenate01-blankover-COUNT,0,USSenate01-blankover-PCT,0%
+USSenate01-candidate01,Shelby Pikachu BILLIONAIRE (W),USSenate01-candidate01-VOTE,0,USSenate01-candidate01-PCT,0%
+USSenate01-candidate02,Mazie K. HIRONO (D),USSenate01-candidate02-VOTE,0,USSenate01-candidate02-PCT,0%
+USSenate01-candidate03,Bob MCDERMOTT (R),USSenate01-candidate03-VOTE,0,USSenate01-candidate03-PCT,0%
+USSenate01-candidate04,Emma Jane Avila POHLMAN (G),USSenate01-candidate04-VOTE,0,USSenate01-candidate04-PCT,0%
 USRep01,US Representative District 1
-USRep01-blankover-COUNT,39,USRep01-blankover-PCT,15.3%
-USRep01-candidate01,Ed (D) CASE,USRep01-candidate01-VOTE,104,USRep01-candidate01-PCT,40.8%
-USRep01-candidate02,Patrick C. (R) LARGEY,USRep01-candidate02-VOTE,112,USRep01-candidate02-PCT,43.9%
+USRep01-blankover-COUNT,0,USRep01-blankover-PCT,0%
+USRep01-candidate01,Ed CASE (D),USRep01-candidate01-VOTE,0,USRep01-candidate01-PCT,0%
+USRep01-candidate02,Patrick C. LARGEY (R),USRep01-candidate02-VOTE,0,USRep01-candidate02-PCT,0%
 USRep02,US Representative District 2
-USRep02-blankover-COUNT,14,USRep02-blankover-PCT,6.0%
-USRep02-candidate01,Steve (R) BOND,USRep02-candidate01-VOTE,47,USRep02-candidate01-PCT,20.1%
-USRep02-candidate02,Randall Kelly (N) MEYER,USRep02-candidate02-VOTE,23,USRep02-candidate02-PCT,9.8%
-USRep02-candidate03,Jill N. (D) TOKUDA,USRep02-candidate03-VOTE,123,USRep02-candidate03-PCT,52.6%
-USRep02-candidate04,Aaron (L) TOMAN,USRep02-candidate04-VOTE,27,USRep02-candidate04-PCT,11.5%
-HISeante06,State Senator District 6
-HISeante06-blankover-COUNT,0,HISeante06-blankover-PCT,0.0%
-HISenate06-candidate01,Angus L.K. (D) MCKELVEY,HISenate06-candidate01-VOTE,12,HISenate06-candidate01-PCT,92.3%
-HISenate06-candidate02,Sheila (R) WALKER,HISenate06-candidate02-VOTE,1,HISenate06-candidate02-PCT,7.7%
-HISeante07,State Senator District 7
-HISeante07-blankover-COUNT,0,HISeante07-blankover-PCT,0.0%
-HISenate07-candidate01,Lynn Pualani (D) DECOITE,HISenate07-candidate01-VOTE,10,HISenate07-candidate01-PCT,71.4%
-HISenate07-candidate02,Gabby (R) MACARAEG,HISenate07-candidate02-VOTE,4,HISenate07-candidate02-PCT,28.6%
+USRep02-blankover-COUNT,0,USRep02-blankover-PCT,0%
+USRep02-candidate01,Steve BOND (R),USRep02-candidate01-VOTE,0,USRep02-candidate01-PCT,0%
+USRep02-candidate02,Randall Kelly MEYER (N),USRep02-candidate02-VOTE,0,USRep02-candidate02-PCT,0%
+USRep02-candidate03,Jill N. TOKUDA (D),USRep02-candidate03-VOTE,0,USRep02-candidate03-PCT,0%
+USRep02-candidate04,Aaron TOMAN (L),USRep02-candidate04-VOTE,0,USRep02-candidate04-PCT,0%
+HISenate06,State Senator District 6
+HISenate06-blankover-COUNT,0,HISenate06-blankover-PCT,0%
+HISenate06-candidate01,Angus L.K. MCKELVEY (D),HISenate06-candidate01-VOTE,0,HISenate06-candidate01-PCT,0%
+HISenate06-candidate02,Sheila WALKER (R),HISenate06-candidate02-VOTE,0,HISenate06-candidate02-PCT,0%
+HISenate07,State Senator District 7
+HISenate07-blankover-COUNT,0,HISenate07-blankover-PCT,0%
+HISenate07-candidate01,Lynn Pualani DECOITE (D),HISenate07-candidate01-VOTE,0,HISenate07-candidate01-PCT,0%
+HISenate07-candidate02,Gabby MACARAEG (R),HISenate07-candidate02-VOTE,0,HISenate07-candidate02-PCT,0%
 HIRep11,State Representative District 11
-HIRep11-blankover-COUNT,4,HIRep11-blankover-PCT,40.0%
-HIRep11-candidate01,Aileen R. (Lily) (R) ACAIN,HIRep11-candidate01-VOTE,0,HIRep11-candidate01-PCT,0.0%
-HIRep11-candidate02,Terez (T.Amato) (D) AMATO,HIRep11-candidate02-VOTE,6,HIRep11-candidate02-PCT,60.0%
+HIRep11-blankover-COUNT,0,HIRep11-blankover-PCT,0%
+HIRep11-candidate01,Aileen R. (Lily) ACAIN (R),HIRep11-candidate01-VOTE,0,HIRep11-candidate01-PCT,0%
+HIRep11-candidate02,Terez (T.Amato) AMATO (D),HIRep11-candidate02-VOTE,0,HIRep11-candidate02-PCT,0%
 HIRep12,State Representative District 12
-HIRep12-blankover-COUNT,0,HIRep12-blankover-PCT,0.0%
-HIRep12-candidate01,Dan (R) JOHNSON,HIRep12-candidate01-VOTE,0,HIRep12-candidate01-PCT,0.0%
-HIRep12-candidate02,Rita M. (G) RYAN,HIRep12-candidate02-VOTE,0,HIRep12-candidate02-PCT,0.0%
-HIRep12-candidate03,Kyle T. (D) YAMASHITA,HIRep12-candidate03-VOTE,3,HIRep12-candidate03-PCT,100.0%
+HIRep12-blankover-COUNT,0,HIRep12-blankover-PCT,0%
+HIRep12-candidate01,Dan JOHNSON (R),HIRep12-candidate01-VOTE,0,HIRep12-candidate01-PCT,0%
+HIRep12-candidate02,Rita M. RYAN (G),HIRep12-candidate02-VOTE,0,HIRep12-candidate02-PCT,0%
+HIRep12-candidate03,Kyle T. YAMASHITA (D),HIRep12-candidate03-VOTE,0,HIRep12-candidate03-PCT,0%
 HIRep13,State Representative District 13
-HIRep13-blankover-COUNT,2,HIRep13-blankover-PCT,14.3%
-HIRep13-candidate01,Scott (R) ADAM,HIRep13-candidate01-VOTE,4,HIRep13-candidate01-PCT,28.6%
-HIRep13-candidate02,Mahina (D) POEPOE,HIRep13-candidate02-VOTE,8,HIRep13-candidate02-PCT,57.1%
+HIRep13-blankover-COUNT,0,HIRep13-blankover-PCT,0%
+HIRep13-candidate01,Scott ADAM (R),HIRep13-candidate01-VOTE,0,HIRep13-candidate01-PCT,0%
+HIRep13-candidate02,Mahina POEPOE (D),HIRep13-candidate02-VOTE,0,HIRep13-candidate02-PCT,0%
 HIRep14,State Representative District 14
 HIRep14-blankover-COUNT,0,HIRep14-blankover-PCT,0%
-HIRep14-candidate01,Kelly J. (R) ARMSTRONG,HIRep14-candidate01-VOTE,0,HIRep14-candidate01-PCT,0%
-HIRep14-candidate02,Elle (D) COCHRAN,HIRep14-candidate02-VOTE,0,HIRep14-candidate02-PCT,0%
+HIRep14-candidate01,Kelly J. ARMSTRONG (R),HIRep14-candidate01-VOTE,0,HIRep14-candidate01-PCT,0%
+HIRep14-candidate02,Elle COCHRAN (D),HIRep14-candidate02-VOTE,0,HIRep14-candidate02-PCT,0%
 OHA-Molokai,OHA Molokai Trustee
-OHA-Molokai-blankover-COUNT,115,OHA-Molokai-blankover-PCT,23.5%
-OHA-Molokai-candidate01,Luana ALAPA,OHA-Molokai-candidate01-VOTE,199,OHA-Molokai-candidate01-PCT,40.7%
-OHA-Molokai-candidate02,R. Kunani NIHIPALI,OHA-Molokai-candidate02-VOTE,175,OHA-Molokai-candidate02-PCT,35.8%
+OHA-Molokai-blankover-COUNT,0,OHA-Molokai-blankover-PCT,0%
+OHA-Molokai-candidate01,Luana ALAPA,OHA-Molokai-candidate01-VOTE,0,OHA-Molokai-candidate01-PCT,0%
+OHA-Molokai-candidate02,R. Kunani NIHIPALI,OHA-Molokai-candidate02-VOTE,0,OHA-Molokai-candidate02-PCT,0%
 OHA-Kauai,OHA Kauai Trustee
-OHA-Kauai-blankover-COUNT,123,OHA-Kauai-blankover-PCT,25.2%
-OHA-Kauai-candidate01,Dan AHUNA,OHA-Kauai-candidate01-VOTE,173,OHA-Kauai-candidate01-PCT,35.4%
-OHA-Kauai-candidate02,Laura A. LINDSEY,OHA-Kauai-candidate02-VOTE,193,OHA-Kauai-candidate02-PCT,39.5%
+OHA-Kauai-blankover-COUNT,0,OHA-Kauai-blankover-PCT,0%
+OHA-Kauai-candidate01,Dan AHUNA,OHA-Kauai-candidate01-VOTE,0,OHA-Kauai-candidate01-PCT,0%
+OHA-Kauai-candidate02,Laura A. LINDSEY,OHA-Kauai-candidate02-VOTE,0,OHA-Kauai-candidate02-PCT,0%
 OHA-AtLarge,OHA At-Large Trustee
-OHA-AtLarge-blankover-COUNT,109,OHA-AtLarge-blankover-PCT,22.3%
-OHA-AtLarge-candidate01,Lei AHU ISA,OHA-AtLarge-candidate01-VOTE,189,OHA-AtLarge-candidate01-PCT,38.7%
-OHA-AtLarge-candidate02,Keli'i AKINA,OHA-AtLarge-candidate02-VOTE,191,OHA-AtLarge-candidate02-PCT,39.1%
+OHA-AtLarge-blankover-COUNT,0,OHA-AtLarge-blankover-PCT,0%
+OHA-AtLarge-candidate01,Lei AHU ISA,OHA-AtLarge-candidate01-VOTE,0,OHA-AtLarge-candidate01-PCT,0%
+OHA-AtLarge-candidate02,Keli'i AKINA,OHA-AtLarge-candidate02-VOTE,0,OHA-AtLarge-candidate02-PCT,0%
 Council-EM,Maui County Council - East Maui
-Council-EM-blankover-COUNT,5,Council-EM-blankover-PCT,9.8%
-Council-EM-candidate01,Shane SINENCI,Council-EM-candidate01-VOTE,46,Council-EM-candidate01-PCT,90.2%
+Council-EM-blankover-COUNT,0,Council-EM-blankover-PCT,0%
+Council-EM-candidate01,Shane SINENCI,Council-EM-candidate01-VOTE,0,Council-EM-candidate01-PCT,0%
 Council-WM,Maui County Council - West Maui
-Council-WM-blankover-COUNT,6,Council-WM-blankover-PCT,11.8%
-Council-WM-candidate01,Lorien (Lolo) ACQUINTAS,Council-WM-candidate01-VOTE,18,Council-WM-candidate01-PCT,35.3%
-Council-WM-candidate02,Tamara Akiko Maile PALTIN,Council-WM-candidate02-VOTE,27,Council-WM-candidate02-PCT,52.9%
+Council-WM-blankover-COUNT,0,Council-WM-blankover-PCT,0%
+Council-WM-candidate01,Lorien (Lolo) ACQUINTAS,Council-WM-candidate01-VOTE,0,Council-WM-candidate01-PCT,0%
+Council-WM-candidate02,Tamara Akiko Maile PALTIN,Council-WM-candidate02-VOTE,0,Council-WM-candidate02-PCT,0%
 Council-WWW,Maui County Council - Wailuku Waihee Waikapu
-Council-WWW-blankover-COUNT,6,Council-WWW-blankover-PCT,11.8%
-Council-WWW-candidate01,James (Nahele) FORREST,Council-WWW-candidate01-VOTE,28,Council-WWW-candidate01-PCT,54.9%
-Council-WWW-candidate02,Alice L. LEE,Council-WWW-candidate02-VOTE,17,Council-WWW-candidate02-PCT,33.3%
+Council-WWW-blankover-COUNT,0,Council-WWW-blankover-PCT,0%
+Council-WWW-candidate01,James (Nahele) FORREST,Council-WWW-candidate01-VOTE,0,Council-WWW-candidate01-PCT,0%
+Council-WWW-candidate02,Alice L. LEE,Council-WWW-candidate02-VOTE,0,Council-WWW-candidate02-PCT,0%
 Council-KAH,Maui County Council - Kahului
-Council-KAH-blankover-COUNT,5,Council-KAH-blankover-PCT,9.8%
-Council-KAH-candidate01,Tasha KAMA,Council-KAH-candidate01-VOTE,21,Council-KAH-candidate01-PCT,41.2%
-Council-KAH-candidate02,Carol Lee KAMEKONA,Council-KAH-candidate02-VOTE,25,Council-KAH-candidate02-PCT,49.0%
+Council-KAH-blankover-COUNT,0,Council-KAH-blankover-PCT,0%
+Council-KAH-candidate01,Tasha KAMA,Council-KAH-candidate01-VOTE,0,Council-KAH-candidate01-PCT,0%
+Council-KAH-candidate02,Carol Lee KAMEKONA,Council-KAH-candidate02-VOTE,0,Council-KAH-candidate02-PCT,0%
 Council-SM,Maui County Council - South Maui
-Council-SM-blankover-COUNT,5,Council-SM-blankover-PCT,9.8%
-Council-SM-candidate01,Tom COOK,Council-SM-candidate01-VOTE,23,Council-SM-candidate01-PCT,45.1%
-Council-SM-candidate02,Kelly Takaya KING,Council-SM-candidate02-VOTE,23,Council-SM-candidate02-PCT,45.1%
+Council-SM-blankover-COUNT,0,Council-SM-blankover-PCT,0%
+Council-SM-candidate01,Tom COOK,Council-SM-candidate01-VOTE,0,Council-SM-candidate01-PCT,0%
+Council-SM-candidate02,Kelly Takaya KING,Council-SM-candidate02-VOTE,0,Council-SM-candidate02-PCT,0%
 Council-MHP,Maui County Council - Makawao Haiku Paia
-Council-MHP-blankover-COUNT,5,Council-MHP-blankover-PCT,9.8%
-Council-MHP-candidate01,Nara BOONE,Council-MHP-candidate01-VOTE,26,Council-MHP-candidate01-PCT,51.0%
-Council-MHP-candidate02,Nohe UU-HODGINS,Council-MHP-candidate02-VOTE,20,Council-MHP-candidate02-PCT,39.2%
+Council-MHP-blankover-COUNT,0,Council-MHP-blankover-PCT,0%
+Council-MHP-candidate01,Nara BOONE,Council-MHP-candidate01-VOTE,0,Council-MHP-candidate01-PCT,0%
+Council-MHP-candidate02,Nohe UU-HODGINS,Council-MHP-candidate02-VOTE,0,Council-MHP-candidate02-PCT,0%
 Council-UP,Maui County Council - Upcountry
-Council-UP-blankover-COUNT,5,Council-UP-blankover-PCT,9.8%
-Council-UP-candidate01,Jocelyn N. CRUZ,Council-UP-candidate01-VOTE,28,Council-UP-candidate01-PCT,54.9%
-Council-UP-candidate02,Yuki Lei Kashiwa SUGIMURA,Council-UP-candidate02-VOTE,18,Council-UP-candidate02-PCT,35.3%
+Council-UP-blankover-COUNT,0,Council-UP-blankover-PCT,0%
+Council-UP-candidate01,Jocelyn N. CRUZ,Council-UP-candidate01-VOTE,0,Council-UP-candidate01-PCT,0%
+Council-UP-candidate02,Yuki Lei Kashiwa SUGIMURA,Council-UP-candidate02-VOTE,0,Council-UP-candidate02-PCT,0%
 Council-LAN,Maui County Council - Lanai
-Council-LAN-blankover-COUNT,3,Council-LAN-blankover-PCT,5.9%
-Council-LAN-candidate01,Gabe JOHNSON,Council-LAN-candidate01-VOTE,48,Council-LAN-candidate01-PCT,94.1%
+Council-LAN-blankover-COUNT,0,Council-LAN-blankover-PCT,0%
+Council-LAN-candidate01,Gabe JOHNSON,Council-LAN-candidate01-VOTE,0,Council-LAN-candidate01-PCT,0%
 Council-MOL,Maui County Council - Molokai
-Council-MOL-blankover-COUNT,7,Council-MOL-blankover-PCT,13.7%
-Council-MOL-candidate01,John PELE,Council-MOL-candidate01-VOTE,22,Council-MOL-candidate01-PCT,43.1%
-Council-MOL-candidate02,Keani RAWLINS-FERNANDEZ,Council-MOL-candidate02-VOTE,22,Council-MOL-candidate02-PCT,43.1%
+Council-MOL-blankover-COUNT,0,Council-MOL-blankover-PCT,0%
+Council-MOL-candidate01,John PELE,Council-MOL-candidate01-VOTE,0,Council-MOL-candidate01-PCT,0%
+Council-MOL-candidate02,Keani RAWLINS-FERNANDEZ,Council-MOL-candidate02-VOTE,0,Council-MOL-candidate02-PCT,0%
 HIamend01,Hawaii State Constitution Amendment 1
-HIamend01-blankover-COUNT,63,HIamend01-blankover-PCT,12.9%
-HIamend01-q,Shall the state constitution be amended to repeal the legislature's authority to reserve marriage to opposite-sex couples?
-HIamend01-a1, YES,HIamend01-a1-VOTE,261,HIamend01-a1-PCT,53.4%
-HIamend01-a2, NO,HIamend01-a2-VOTE,165,HIamend01-a2-PCT,33.7%
+HIamend01-blankover-COUNT,0,HIamend01-blankover-PCT,0%
+HIamend01-a1,YES,HIamend01-a1-VOTE,0,HIamend01-a1-PCT,0%
+HIamend01-a2,NO,HIamend01-a2-VOTE,0,HIamend01-a2-PCT,0%
 HIamend02,Hawaii State Constitution Amendment 2
-HIamend02-blankover-COUNT,75,HIamend02-blankover-PCT,15.3%
-HIamend02-q,Shall the Constitution of the State of Hawaii be amended to make the appointment and confirmation process for district court judges the same as the appointment and confirmation process for supreme court justices and intermediate court of appeals and circuit court judges?
-HIamend02-a1, YES,HIamend02-a1-VOTE,249,HIamend02-a1-PCT,50.9%
-HIamend02-a2, NO,HIamend02-a2-VOTE,165,HIamend02-a2-PCT,33.7%
+HIamend02-blankover-COUNT,0,HIamend02-blankover-PCT,0%
+HIamend02-a1,YES,HIamend02-a1-VOTE,0,HIamend02-a1-PCT,0%
+HIamend02-a2,NO,HIamend02-a2-VOTE,0,HIamend02-a2-PCT,0%
 MAUIamend01,Maui County Charter Amendment 1 
-MAUIamend01-blankover-COUNT,4,MAUIamend01-blankover-PCT,7.8%
-MAUIamend01-q,"Shall the Charter be amended to require the Salary Commission to determine ""salaries"" instead of ""compensation"" for elected officials and appointed directors and deputy directors to maintain consistency with the Constitution of the State of Hawaii and remove fiscal barriers to create equity through benefits such as reimbursement of travel costs?"
-MAUIamend01-a1, YES,MAUIamend01-a1-VOTE,26,MAUIamend01-a1-PCT,51.0%
-MAUIamend01-a2, NO,MAUIamend01-a2-VOTE,21,MAUIamend01-a2-PCT,41.2%
+MAUIamend01-blankover-COUNT,0,MAUIamend01-blankover-PCT,0%
+MAUIamend01-a1,YES,MAUIamend01-a1-VOTE,0,MAUIamend01-a1-PCT,0%
+MAUIamend01-a2,NO,MAUIamend01-a2-VOTE,0,MAUIamend01-a2-PCT,0%
 MAUIamend02,Maui County Charter Amendment 2
-MAUIamend02-blankover-COUNT,7,MAUIamend02-blankover-PCT,13.7%
-MAUIamend02-q,"Shall the Charter be amended, effective July 1, 2025, to authorize the Board of Ethics of the County of Maui to hire independent staff?"
-MAUIamend02-a1, YES,MAUIamend02-a1-VOTE,25,MAUIamend02-a1-PCT,49.0%
-MAUIamend02-a2, NO,MAUIamend02-a2-VOTE,19,MAUIamend02-a2-PCT,37.3%
+MAUIamend02-blankover-COUNT,0,MAUIamend02-blankover-PCT,0%
+MAUIamend02-a1,YES,MAUIamend02-a1-VOTE,0,MAUIamend02-a1-PCT,0%
+MAUIamend02-a2,NO,MAUIamend02-a2-VOTE,0,MAUIamend02-a2-PCT,0%
 MAUIamend03,Maui County Charter Amendment 3 
-MAUIamend03-blankover-COUNT,4,MAUIamend03-blankover-PCT,7.8%
-MAUIamend03-q,"Shall the Charter be amended, effective July 1, 2025, to minimize the risk of vacancies on boards and commissions generally, and specifically with regard to dedicated seats for members residing in less populous areas, by allowing the appointment of members of boards and commissions for two consecutive full terms or ten consecutive years, whichever is greater?"
-MAUIamend03-a1, YES,MAUIamend03-a1-VOTE,26,MAUIamend03-a1-PCT,51.0%
-MAUIamend03-a2, NO,MAUIamend03-a2-VOTE,21,MAUIamend03-a2-PCT,41.2%
+MAUIamend03-blankover-COUNT,0,MAUIamend03-blankover-PCT,0%
+MAUIamend03-a1,YES,MAUIamend03-a1-VOTE,0,MAUIamend03-a1-PCT,0%
+MAUIamend03-a2,NO,MAUIamend03-a2-VOTE,0,MAUIamend03-a2-PCT,0%
+USHouseTotal,US House of Representatives
+USHouseTotal-R,20
+USHouseTotal-D,200
+USHouseUnknown,200
+USSenateTotal,US Senate
+USSenateTotal-R,20
+USSenateTotal-D,70
+USSenateUnknown,10
+PresidentNational,President & Vice President
+PresidentNat-candidate01,De LaCruze/Garcia (SL)
+PresidentNat-candidate01-PCT,1%
+PresidentNat-candidate01-VOTE,10
+PresidentNat-candidate02,Harris/Walz (D)
+PresidentNat-candidate02-PCT,2%
+PresidentNat-candidate02-VOTE,20
+PresidentNat-candidate03,Oliver/TerMatt (L)
+PresidentNat-candidate03-PCT,3%
+PresidentNat-candidate03-VOTE,30
+PresidentNat-candidate04,Sonski/Onak (G)
+PresidentNat-candidate04-PCT,4%
+PresidentNat-candidate04-VOTE,40
+PresidentNat-candidate05,Stein/Ware (G)
+PresidentNat-candidate05-PCT,5%
+PresidentNat-candidate05-VOTE,50
+PresidentNat-candidate06,Trump/Vance (NeoN)
+PresidentNat-candidate06-PCT,6%
+PresidentNat-candidate06-VOTE,60
